@@ -16,6 +16,10 @@ description: A knowledge base for Leica Biosystems Pathology Products
 ### 🔬 組織病理設備 (Histology Instruments - HI)
 涵蓋從前端組織處理到全自動切片、染色及封裝流程的設備解決方案。
 
+*   **組織處理機/脫水機 (Tissue Processors)**
+    *   **HistoCore PELORIS 3 - 旗艦級快速雙缸組織處理機**：[[Leica Biosystem/HI/HistoCore PELORIS 3/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore PELORIS 3/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore PELORIS 3/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore PELORIS 3/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore PEGASUS - 高通量雙缸組織處理機**：[[Leica Biosystem/HI/HistoCore PEGASUS/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore PEGASUS/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore PEGASUS/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore PEGASUS/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore PEARL - 桌上型單缸組織處理機**：[[Leica Biosystem/HI/HistoCore PEARL/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore PEARL/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore PEARL/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore PEARL/Leica的訂貨產品資訊|訂貨資訊]]
 *   **全/半自動切片機**
     *   **Leica RM2255 - 全自動旋轉式切片機**：[[Leica Biosystem/HI/Leica RM2255/介紹|介紹]] | [[Leica Biosystem/HI/Leica RM2255/招標規格|招標規格]] | [[Leica Biosystem/HI/Leica RM2255/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/Leica RM2255/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore AUTOCUT - 全自動旋轉式切片機**：[[Leica Biosystem/HI/HistoCore AUTOCUT/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore AUTOCUT/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore AUTOCUT/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore AUTOCUT/Leica的訂貨產品資訊|訂貨資訊]]
