@@ -14,16 +14,21 @@
 │ ① 組織處理 / 脫水包埋     │  ← PELORIS 3 / PEGASUS / PEARL
 └───────────┬─────────────┘
             │
+            ▼
+┌─────────────────────────┐
+│ ② 組織包埋 (Embedding)   │  ← Arcadia C & S
+└───────────┬─────────────┘
+            │
      ┌──────┴──────┐
      ▼              ▼
 ┌─────────┐  ┌──────────────┐
-│ ② 常規   │  │ ②' 術中急凍    │  ← AUTOCUT / MULTICUT / BIOCUT
+│ ③ 常規   │  │ ③' 術中急凍    │  ← AUTOCUT / MULTICUT / BIOCUT
 │ 石蠟切片  │  │   冷凍切片     │  ← CM1950 / CM1860 / CM3050 S
 └────┬────┘  └──────┬───────┘
      │               │
      ▼               ▼
 ┌─────────────────────────┐
-│ ③ 染色 & 封片            │  ← SPECTRA ST / CHROMAX / ST5010 / ST4020
+│ ④ 染色 & 封片            │  ← SPECTRA ST / CHROMAX / ST5010 / ST4020
 └───────────┬─────────────┘
             │
             ▼
@@ -76,9 +81,30 @@
 
 ---
 
-## B. 切片機 (Microtomes & Cryostats)
+## B. 組織包埋機 (Embedding Centers)
 
-### B-1. 常規石蠟切片機 (Rotary Microtomes)
+> **流程說明**：將脫水後滲透了石蠟的組織塊，放置於包埋模具中並注入熱石蠟，隨後在冷卻板上凝固成形。這是讓柔軟組織獲得足夠支撐力以進行切片的關鍵步驟。
+
+### 產品線一覽
+
+| 產品 | 定位 | 亮點功能 | 適用場景 |
+|:---|:---|:---|:---|
+| **[[Leica Arcadia C & S/介紹\|Arcadia C & S]]** | 石蠟包埋工作站 | 人體工學設計、精確溫控、減少操作疲勞 | 所有需要常規石蠟切片的實驗室 |
+
+#### 🎯 業務銷售重點
+
+1. **注重人體工學，保護操作員**
+   - 包埋站是病理技術員每天花費大量時間操作的設備，Arcadia 靠手墊與傾斜角度設計，有效減少肩頸與手腕疲勞。
+   - 話術：*「操作員的手腕健康無價，Arcadia 的設計就是為了讓他們包埋一天也不覺得累」*
+
+2. **精確的溫度管理**
+   - 確保石蠟保持在最佳流動狀態，並在冷卻板上快速且均勻地凝固，避免組織收縮不均。
+
+---
+
+## C. 切片機 (Microtomes & Cryostats)
+
+### C-1. 常規石蠟切片機 (Rotary Microtomes)
 
 > **流程說明**：將已完成脫水包埋的石蠟組織塊，以 3–5 µm 厚度切割成薄片，裱貼於載玻片上準備染色。切片品質（均勻度、無皺褶、厚度一致性）是病理報告準確性的根本。
 
@@ -104,7 +130,7 @@
    - 主動式電冷卻夾具讓組織塊長時間保持低溫，減少抗原退化
    - 特別適用於需要連續切大量 IHC 切片的腫瘤科客戶
 
-### B-2. 冷凍切片機 (Cryostats) — 術中急凍切片
+### C-2. 冷凍切片機 (Cryostats) — 術中急凍切片
 
 > **流程說明**：在外科手術進行中，將新鮮組織直接快速冷凍後切片，10–15 分鐘內出結果，供外科醫師判斷腫瘤邊緣是否切乾淨。這是病理科最具時間壓力的工作流程——**速度就是一切**。
 
@@ -133,7 +159,7 @@
 
 ---
 
-## C. 染色機 & 封片機 (Stainers & Coverslippers)
+## D. 染色機 & 封片機 (Stainers & Coverslippers)
 
 > **流程說明**：切片裱貼於載玻片後，需經過脫蠟 → 染色 (最常見為 H&E) → 脫水 → 透明 → 封片等步驟，才能在顯微鏡或數位掃描儀下觀察。Leica 提供從高通量到超緊湊的全系列染色解決方案。
 
@@ -170,7 +196,7 @@
 
 ---
 
-## D. 臨床用數位掃片機 (Clinical Scanners)
+## E. 臨床用數位掃片機 (Clinical Scanners)
 
 > **流程說明**：將染色完成的玻片以高倍率光學掃描儀數位化，產生全玻片影像 (Whole Slide Image, WSI)，供病理醫師在螢幕上閱片、進行遠距會診或 AI 輔助分析。數位病理是病理科現代化轉型的最後一哩路。
 
@@ -210,7 +236,7 @@
 
 ---
 
-## E. 科研用多模式掃描儀 (Research Scanner)
+## F. 科研用多模式掃描儀 (Research Scanner)
 
 ### [[../DP/Aperio VERSA/介紹|Aperio VERSA]] — 研究型明視野 + 螢光 + FISH 多功能掃描儀
 
@@ -231,7 +257,7 @@
 
 ---
 
-## F. Aperio HALO AP — AI 驅動影像管理平台
+## G. Aperio HALO AP — AI 驅動影像管理平台
 
 > **Aperio HALO AP** 是 Leica Biosystems 與 **Indica Labs** 聯合開發的 **AI 驅動數位病理影像管理平台**，已獲得 **美國 FDA 510(k)** 認證（搭配 Aperio GT 450 DX 使用時）。它是 Leica 數位病理生態系的「大腦」，將掃描儀產生的影像轉化為可管理、可分析、可協作的臨床與研究資產。
 
@@ -309,14 +335,14 @@ CM1950 (急凍切片) → ST4020 (快速H&E) → CS5 (即時掃描) → HALO AP 
 
 ## 📋 快速推薦指南：按客戶類型配機
 
-| 客戶類型 | 組織處理 | 切片 | 冷凍切片 | 染色 | 掃描 | 影像平台 |
-|:---|:---|:---|:---|:---|:---|:---|
-| **大型醫學中心** | PELORIS 3 | AUTOCUT | CM1950 | SPECTRA ST + CV | GT 450 DX | HALO AP |
-| **中型區域醫院** | PEGASUS | MULTICUT | CM1860 | CHROMAX (ST+CV) | GT 180 | HALO AP |
-| **小型醫院/診所** | PEARL | BIOCUT | CM1860 | ST5010 | CS5 | HALO AP |
-| **Mohs / 術中急凍** | — | — | CM1950 | ST4020 | CS5 | HALO AP |
-| **大學研究室** | PEARL | MULTICUT | CM3050 S | ST5010 | VERSA | HALO AP |
-| **癌症研究中心** | PEGASUS | AUTOCUT | CM1950 | SPECTRA ST | VERSA | HALO AP |
+| 客戶類型 | 組織處理 | 包埋機 | 切片 | 冷凍切片 | 染色 | 掃描 | 影像平台 |
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| **大型醫學中心** | PELORIS 3 | Arcadia C & S | AUTOCUT | CM1950 | SPECTRA ST + CV | GT 450 DX | HALO AP |
+| **中型區域醫院** | PEGASUS | Arcadia C & S | MULTICUT | CM1860 | CHROMAX (ST+CV) | GT 180 | HALO AP |
+| **小型醫院/診所** | PEARL | Arcadia C & S | BIOCUT | CM1860 | ST5010 | CS5 | HALO AP |
+| **Mohs / 術中急凍** | — | — | — | CM1950 | ST4020 | CS5 | HALO AP |
+| **大學研究室** | PEARL | Arcadia C & S | MULTICUT | CM3050 S | ST5010 | VERSA | HALO AP |
+| **癌症研究中心** | PEGASUS | Arcadia C & S | AUTOCUT | CM1950 | SPECTRA ST | VERSA | HALO AP |
 
 ---
 

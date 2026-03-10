@@ -22,6 +22,8 @@ description: A knowledge base for Leica Biosystems Pathology Products
     *   **HistoCore PELORIS 3 - 旗艦級快速雙缸組織處理機**：[[HI/HistoCore PELORIS 3/介紹|介紹]] | [[HI/HistoCore PELORIS 3/招標規格|招標規格]] | [[HI/HistoCore PELORIS 3/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PELORIS 3/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore PEGASUS - 高通量雙缸組織處理機**：[[HI/HistoCore PEGASUS/介紹|介紹]] | [[HI/HistoCore PEGASUS/招標規格|招標規格]] | [[HI/HistoCore PEGASUS/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PEGASUS/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore PEARL - 桌上型單缸組織處理機**：[[HI/HistoCore PEARL/介紹|介紹]] | [[HI/HistoCore PEARL/招標規格|招標規格]] | [[HI/HistoCore PEARL/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PEARL/Leica的訂貨產品資訊|訂貨資訊]]
+*   **組織包埋機 (Embedding Centers)**
+    *   **Leica Arcadia C & S - 石蠟包埋工作站**：[[HI/Leica Arcadia C & S/介紹|介紹]] | [[HI/Leica Arcadia C & S/招標規格|招標規格]] | [[HI/Leica Arcadia C & S/競爭對手比較|競爭對手比較]] | [[HI/Leica Arcadia C & S/Leica的訂貨產品資訊|訂貨資訊]]
 *   **全/半自動切片機**
     *   **HistoCore AUTOCUT - 全自動旋轉式切片機**：[[HI/HistoCore AUTOCUT/介紹|介紹]] | [[HI/HistoCore AUTOCUT/招標規格|招標規格]] | [[HI/HistoCore AUTOCUT/競爭對手比較|競爭對手比較]] | [[HI/HistoCore AUTOCUT/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore MULTICUT - 半自動旋轉式切片機**：[[HI/HistoCore MULTICUT/介紹|介紹]] | [[HI/HistoCore MULTICUT/招標規格|招標規格]] | [[HI/HistoCore MULTICUT/競爭對手比較|競爭對手比較]] | [[HI/HistoCore MULTICUT/Leica的訂貨產品資訊|訂貨資訊]]
