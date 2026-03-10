@@ -58,5 +58,14 @@ description: A knowledge base for Leica Biosystems Pathology Products
 
 ---
 
-*資料最後更新於：2026年3月*
+## 📝 最新更新日誌 (Changelog)
+
+*   **2026.03.10**:
+    *   **Workflow**: 新增 [[HI/Workflow 總覽 – HI + DP 完整病理工作流程|HI + DP 全流程總覽]]，並加入 Mermaid 流程圖與時間軸對比圖解。
+    *   **HI 產品**: 新增「組織包埋機」類別與 [[HI/Leica Arcadia C & S/介紹|Arcadia C & S]] 介紹；重組設備分類結構。
+    *   **DP 產品**: 區分「臨床用」與「科研用」掃描儀；GT 450 更名為 **GT 450 / GT 450 DX** 並加上 TFDA 許可證字號與檔案；新增 **Aperio HALO AP** AI 管理平台。
+
+---
+
+*資料最後更新於：2026年3月10日*
 
