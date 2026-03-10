@@ -49,10 +49,13 @@ description: A knowledge base for Leica Biosystems Pathology Products
     *   **Aperio GT 450 / GT 450 DX - 極速高通量數位病理玻片掃描儀** (衛部醫器輸字第037061號)：[[DP/Aperio GT 450/介紹|介紹]] | [[DP/Aperio GT 450/招標規格|招標規格]] | [[DP/Aperio GT 450/競爭對手比較|競爭對手比較]] | [[DP/Aperio GT 450/Leica的訂貨產品資訊|訂貨資訊]]
     *   **Aperio GT 180 - 高通量數位病理玻片掃描儀**：[[DP/Aperio GT 180/介紹|介紹]] | [[DP/Aperio GT 180/招標規格|招標規格]] | [[DP/Aperio GT 180/競爭對手比較|競爭對手比較]] | [[DP/Aperio GT 180/Leica的訂貨產品資訊|訂貨資訊]]
     *   **Aperio CS5 - 桌上型五片裝數位病理玻片掃描儀**：[[DP/Aperio CS5/介紹|介紹]] | [[DP/Aperio CS5/招標規格|招標規格]] | [[DP/Aperio CS5/競爭對手比較|競爭對手比較]] | [[DP/Aperio CS5/Leica的訂貨產品資訊|訂貨資訊]]
-*   **科研用掃片機**
+*   **科研用掃片機 & 特殊影像系統**
     *   **Aperio VERSA - 研究級多模式全螢光玻片掃描儀**：[[DP/Aperio VERSA/介紹|介紹]] | [[DP/Aperio VERSA/招標規格|招標規格]] | [[DP/Aperio VERSA/競爭對手比較|競爭對手比較]] | [[DP/Aperio VERSA/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **CytoVision - 細胞遺傳學與 FISH 影像分析系統**：[[DP/CytoVision/介紹|介紹]] | [[DP/CytoVision/招標規格|招標規格]] | [[DP/CytoVision/競爭對手比較|競爭對手比較]] | [[DP/CytoVision/Leica的訂貨產品資訊|訂貨資訊]]
 *   **AI 影像管理平台**
-    *   **Aperio HALO AP** - AI 驅動數位病理影像管理平台 (Leica × Indica Labs)
+    *   **Aperio HALO AP - 臨床級 AI 數位病理影像管理平台** (Leica × Indica Labs, FDA 510(k))：[[DP/Aperio HALO AP/介紹|介紹]] | [[DP/Aperio HALO AP/招標規格|招標規格]] | [[DP/Aperio HALO AP/Leica的訂貨產品資訊|訂貨資訊]]
+*   **研究級 AI 影像分析**
+    *   **HALO AI - 研究級深度學習影像分析平台** (Indica Labs)：[[DP/HALO AI/介紹|介紹]]
 
 > **快速檢查：** 關於 DP 設備的特殊與防禦性規格清單，請參考 [[DP/人工確認清單|DP 設備人工確認清單]]。
 
@@ -60,6 +63,11 @@ description: A knowledge base for Leica Biosystems Pathology Products
 
 ## 📝 最新更新日誌 (Changelog)
 
+*   **2026.03.11**:
+    *   **HALO AP**: 新增 [[DP/Aperio HALO AP/介紹|Aperio HALO AP 深度介紹]]（產品起源、系統架構、AI Store、串接協定與相容性、競品比較），含招標規格與訂貨資訊。
+    *   **HALO AI**: 新增 [[DP/HALO AI/介紹|HALO AI 研究版介紹]]（無程式碼 AI 訓練、空間分析、Multiplex IF、與競品 QuPath/Visiopharm 比較）。
+    *   **Arcadia C & S**: 補齊完整內容——H/C/S 三模組規格、人體工學、Peltier 冷卻技術、競品比較 (Sakura TEC 6, Thermo HistoCentre)、招標規格與訂貨資訊。
+    *   **CytoVision**: 新增 [[DP/CytoVision/介紹|CytoVision 細胞遺傳學影像系統]] 全套文件。
 *   **2026.03.10**:
     *   **Workflow**: 新增 [[HI/Workflow 總覽 – HI + DP 完整病理工作流程|HI + DP 全流程總覽]]，並加入 Mermaid 流程圖與時間軸對比圖解。
     *   **HI 產品**: 新增「組織包埋機」類別與 [[HI/Leica Arcadia C & S/介紹|Arcadia C & S]] 介紹；重組設備分類結構。
@@ -67,5 +75,5 @@ description: A knowledge base for Leica Biosystems Pathology Products
 
 ---
 
-*資料最後更新於：2026年3月10日*
+*資料最後更新於：2026年3月11日*
 
