@@ -268,10 +268,12 @@ flowchart LR
 
 #### 🎯 業務銷售重點
 
-- 一台搞定 H&E brightfield + IF 螢光 + FISH，**不用買三台機器**
-- 63x 油鏡自動上油，適合血液病理與細胞學
-- Aperio 分析演算法被全球研究廣泛驗證與引用，對學術客戶有公信力
-- 話術：*「您的研究經費有限但需要多種成像模式？VERSA 一機抵三機」*
+*   **Aperio GT 450 DX / GT 180 / CS5**：涵蓋從桌上型小通量到極速 450 片大通量，專為病理科 H&E 與 IHC 常規掃描設計，具備 TFDA/FDA 認證。
+    *   **賣點**：GT 450 DX 的 1 分鐘極速掃描與不落地連續上片設計，是實現 Same-Day 數位診斷的關鍵。
+*   **Aperio VERSA**：結合明視野與高階多色螢光，專為轉譯醫學研究、生物標記探索設計。
+    *   **賣點**：從 5 片到 200 片裝的高彈性，可加裝高感度螢光相機與各式濾片，幾乎可以拍任何玻片。
+*   **CytoVision 細胞遺傳學影像系統**：專為染色體核型分析 (Karyotyping) 與 FISH 設計的黃金標準分析系統。
+    *   **賣點**：自動尋找分裂相功能徹底解放醫檢師雙眼疲勞；FDA/CE-IVD 認證確保報告品質。提供從單機到 120 片無人值守掃描的擴充性。
 
 ---
 
@@ -290,13 +292,14 @@ flowchart LR
 | **檔案格式支援** | SVS + DICOM 雙格式，相容既有玻片典藏庫 |
 | **資安合規** | 企業級資訊安全，符合 HIPAA / GDPR 標準 |
 
-### 🎯 HALO AP 如何與 Leica 掃描儀搭配
+### 🎯 HALO AP 何如與 Leica 掃描儀搭配
 
 ```
 Aperio GT 450 DX ──┐
-Aperio GT 180   ───┤──→  Aperio HALO AP  ──→  病理醫師閱片 / AI 分析 / 遠端會診
-Aperio CS5      ───┤       (影像管理中心)       ↘ Aperio AI Store
-Aperio VERSA    ───┘                              (AI 演算法庫)
+Aperio GT 180   ───┤
+Aperio CS5      ───┼──→  Aperio HALO AP  ──→  病理醫師閱片 / AI 分析 / 遠端會診
+Aperio VERSA    ───┤       (影像管理中心)       ↘ Aperio AI Store
+CytoVision      ───┘                              (AI 演算法庫)
 ```
 
 1. **GT 450 DX + HALO AP = 臨床數位化完整解決方案**
@@ -309,7 +312,7 @@ Aperio VERSA    ───┘                              (AI 演算法庫)
    - 病理醫師可將 AI 結果作為輔助參考，提升判讀效率與一致性
    - 話術：*「掃描後影像自動進入 HALO AP，AI 幫您先做完定量分析，醫師只需要確認結果——效率提升不止一倍」*
 
-3. **VERSA + HALO AP = 研究影像管理**
+3. **VERSA / CytoVision + HALO AP = 研究影像管理**
    - 多模式影像 (Brightfield + Fluorescence + FISH) 集中管理
    - 研究數據可結構化存取，方便論文發表與跨機構合作
 
