@@ -16,6 +16,8 @@ description: A knowledge base for Leica Biosystems Pathology Products
 ### 🔬 組織病理設備 (Histology Instruments - HI)
 涵蓋從前端組織處理到全自動切片、染色及封裝流程的設備解決方案。
 
+> 📖 **工作流程總覽**：想了解 HI + DP 全產品線如何串聯成完整病理工作流程？請參考 [[HI/Workflow 總覽 – HI + DP 完整病理工作流程|HI + DP Workflow 總覽]]。
+
 *   **組織處理機/脫水機 (Tissue Processors)**
     *   **HistoCore PELORIS 3 - 旗艦級快速雙缸組織處理機**：[[HI/HistoCore PELORIS 3/介紹|介紹]] | [[HI/HistoCore PELORIS 3/招標規格|招標規格]] | [[HI/HistoCore PELORIS 3/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PELORIS 3/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore PEGASUS - 高通量雙缸組織處理機**：[[HI/HistoCore PEGASUS/介紹|介紹]] | [[HI/HistoCore PEGASUS/招標規格|招標規格]] | [[HI/HistoCore PEGASUS/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PEGASUS/Leica的訂貨產品資訊|訂貨資訊]]
@@ -41,13 +43,18 @@ description: A knowledge base for Leica Biosystems Pathology Products
 ### 💻 數位病理掃描儀 (Digital Pathology - DP)
 提供臨床與學術研究使用的全玻片數位化明視野與多模式螢光掃描設備。
 
-*   **Aperio GT 450 - 極速高通量數位病理玻片掃描儀**：[[DP/Aperio GT 450/介紹|介紹]] | [[DP/Aperio GT 450/招標規格|招標規格]] | [[DP/Aperio GT 450/競爭對手比較|競爭對手比較]] | [[DP/Aperio GT 450/Leica的訂貨產品資訊|訂貨資訊]]
-*   **Aperio GT 180 - 高通量數位病理玻片掃描儀**：[[DP/Aperio GT 180/介紹|介紹]] | [[DP/Aperio GT 180/招標規格|招標規格]] | [[DP/Aperio GT 180/競爭對手比較|競爭對手比較]] | [[DP/Aperio GT 180/Leica的訂貨產品資訊|訂貨資訊]]
-*   **Aperio CS5 - 桌上型五片裝數位病理玻片掃描儀**：[[DP/Aperio CS5/介紹|介紹]] | [[DP/Aperio CS5/招標規格|招標規格]] | [[DP/Aperio CS5/競爭對手比較|競爭對手比較]] | [[DP/Aperio CS5/Leica的訂貨產品資訊|訂貨資訊]]
-*   **Aperio VERSA - 研究級多模式全螢光玻片掃描儀**：[[DP/Aperio VERSA/介紹|介紹]] | [[DP/Aperio VERSA/招標規格|招標規格]] | [[DP/Aperio VERSA/競爭對手比較|競爭對手比較]] | [[DP/Aperio VERSA/Leica的訂貨產品資訊|訂貨資訊]]
+*   **臨床用掃片機**
+    *   **Aperio GT 450 / GT 450 DX - 極速高通量數位病理玻片掃描儀** (衛部醫器輸字第037061號)：[[DP/Aperio GT 450/介紹|介紹]] | [[DP/Aperio GT 450/招標規格|招標規格]] | [[DP/Aperio GT 450/競爭對手比較|競爭對手比較]] | [[DP/Aperio GT 450/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **Aperio GT 180 - 高通量數位病理玻片掃描儀**：[[DP/Aperio GT 180/介紹|介紹]] | [[DP/Aperio GT 180/招標規格|招標規格]] | [[DP/Aperio GT 180/競爭對手比較|競爭對手比較]] | [[DP/Aperio GT 180/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **Aperio CS5 - 桌上型五片裝數位病理玻片掃描儀**：[[DP/Aperio CS5/介紹|介紹]] | [[DP/Aperio CS5/招標規格|招標規格]] | [[DP/Aperio CS5/競爭對手比較|競爭對手比較]] | [[DP/Aperio CS5/Leica的訂貨產品資訊|訂貨資訊]]
+*   **科研用掃片機**
+    *   **Aperio VERSA - 研究級多模式全螢光玻片掃描儀**：[[DP/Aperio VERSA/介紹|介紹]] | [[DP/Aperio VERSA/招標規格|招標規格]] | [[DP/Aperio VERSA/競爭對手比較|競爭對手比較]] | [[DP/Aperio VERSA/Leica的訂貨產品資訊|訂貨資訊]]
+*   **AI 影像管理平台**
+    *   **Aperio HALO AP** - AI 驅動數位病理影像管理平台 (Leica × Indica Labs)
 
 > **快速檢查：** 關於 DP 設備的特殊與防禦性規格清單，請參考 [[DP/人工確認清單|DP 設備人工確認清單]]。
 
 ---
 
 *資料最後更新於：2026年3月*
+
