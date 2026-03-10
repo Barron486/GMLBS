@@ -17,36 +17,36 @@ description: A knowledge base for Leica Biosystems Pathology Products
 涵蓋從前端組織處理到全自動切片、染色及封裝流程的設備解決方案。
 
 *   **組織處理機/脫水機 (Tissue Processors)**
-    *   **HistoCore PELORIS 3 - 旗艦級快速雙缸組織處理機**：[[Leica Biosystem/HI/HistoCore PELORIS 3/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore PELORIS 3/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore PELORIS 3/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore PELORIS 3/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **HistoCore PEGASUS - 高通量雙缸組織處理機**：[[Leica Biosystem/HI/HistoCore PEGASUS/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore PEGASUS/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore PEGASUS/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore PEGASUS/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **HistoCore PEARL - 桌上型單缸組織處理機**：[[Leica Biosystem/HI/HistoCore PEARL/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore PEARL/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore PEARL/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore PEARL/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore PELORIS 3 - 旗艦級快速雙缸組織處理機**：[[HI/HistoCore PELORIS 3/介紹|介紹]] | [[HI/HistoCore PELORIS 3/招標規格|招標規格]] | [[HI/HistoCore PELORIS 3/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PELORIS 3/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore PEGASUS - 高通量雙缸組織處理機**：[[HI/HistoCore PEGASUS/介紹|介紹]] | [[HI/HistoCore PEGASUS/招標規格|招標規格]] | [[HI/HistoCore PEGASUS/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PEGASUS/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore PEARL - 桌上型單缸組織處理機**：[[HI/HistoCore PEARL/介紹|介紹]] | [[HI/HistoCore PEARL/招標規格|招標規格]] | [[HI/HistoCore PEARL/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PEARL/Leica的訂貨產品資訊|訂貨資訊]]
 *   **全/半自動切片機**
-    *   **Leica RM2255 - 全自動旋轉式切片機**：[[Leica Biosystem/HI/Leica RM2255/介紹|介紹]] | [[Leica Biosystem/HI/Leica RM2255/招標規格|招標規格]] | [[Leica Biosystem/HI/Leica RM2255/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/Leica RM2255/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **HistoCore AUTOCUT - 全自動旋轉式切片機**：[[Leica Biosystem/HI/HistoCore AUTOCUT/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore AUTOCUT/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore AUTOCUT/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore AUTOCUT/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **HistoCore MULTICUT - 半自動旋轉式切片機**：[[Leica Biosystem/HI/HistoCore MULTICUT/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore MULTICUT/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore MULTICUT/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore MULTICUT/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **HistoCore BIOCUT - 手動旋轉式切片機**：[[Leica Biosystem/HI/HistoCore BIOCUT/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore BIOCUT/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore BIOCUT/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore BIOCUT/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **Leica RM2255 - 全自動旋轉式切片機**：[[HI/Leica RM2255/介紹|介紹]] | [[HI/Leica RM2255/招標規格|招標規格]] | [[HI/Leica RM2255/競爭對手比較|競爭對手比較]] | [[HI/Leica RM2255/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore AUTOCUT - 全自動旋轉式切片機**：[[HI/HistoCore AUTOCUT/介紹|介紹]] | [[HI/HistoCore AUTOCUT/招標規格|招標規格]] | [[HI/HistoCore AUTOCUT/競爭對手比較|競爭對手比較]] | [[HI/HistoCore AUTOCUT/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore MULTICUT - 半自動旋轉式切片機**：[[HI/HistoCore MULTICUT/介紹|介紹]] | [[HI/HistoCore MULTICUT/招標規格|招標規格]] | [[HI/HistoCore MULTICUT/競爭對手比較|競爭對手比較]] | [[HI/HistoCore MULTICUT/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore BIOCUT - 手動旋轉式切片機**：[[HI/HistoCore BIOCUT/介紹|介紹]] | [[HI/HistoCore BIOCUT/招標規格|招標規格]] | [[HI/HistoCore BIOCUT/競爭對手比較|競爭對手比較]] | [[HI/HistoCore BIOCUT/Leica的訂貨產品資訊|訂貨資訊]]
 *   **冷凍切片機**
-    *   **Leica CM1950 - 高性能臨床與研究級冷凍切片機**：[[Leica Biosystem/HI/Leica CM1950/介紹|介紹]] | [[Leica Biosystem/HI/Leica CM1950/招標規格|招標規格]] | [[Leica Biosystem/HI/Leica CM1950/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/Leica CM1950/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **Leica CM1860 - 臨床診斷級半自動冷凍切片機**：[[Leica Biosystem/HI/Leica CM1860/介紹|介紹]] | [[Leica Biosystem/HI/Leica CM1860/招標規格|招標規格]] | [[Leica Biosystem/HI/Leica CM1860/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/Leica CM1860/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **Leica CM1950 - 高性能臨床與研究級冷凍切片機**：[[HI/Leica CM1950/介紹|介紹]] | [[HI/Leica CM1950/招標規格|招標規格]] | [[HI/Leica CM1950/競爭對手比較|競爭對手比較]] | [[HI/Leica CM1950/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **Leica CM1860 - 臨床診斷級半自動冷凍切片機**：[[HI/Leica CM1860/介紹|介紹]] | [[HI/Leica CM1860/招標規格|招標規格]] | [[HI/Leica CM1860/競爭對手比較|競爭對手比較]] | [[HI/Leica CM1860/Leica的訂貨產品資訊|訂貨資訊]]
 *   **全自動染色機**
-    *   **HistoCore SPECTRA ST - 高通量全自動雙臂組織染色機**：[[Leica Biosystem/HI/HistoCore SPECTRA ST/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore SPECTRA ST/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore SPECTRA ST/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore SPECTRA ST/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **Leica ST5010 - 全自動組織染色機**：[[Leica Biosystem/HI/Leica ST5010/介紹|介紹]] | [[Leica Biosystem/HI/Leica ST5010/招標規格|招標規格]] | [[Leica Biosystem/HI/Leica ST5010/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/Leica ST5010/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **HistoCore CHROMAX - 全自動染色與封片整合工作站**：[[Leica Biosystem/HI/HistoCore CHROMAX/介紹|介紹]] | [[Leica Biosystem/HI/HistoCore CHROMAX/招標規格|招標規格]] | [[Leica Biosystem/HI/HistoCore CHROMAX/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/HistoCore CHROMAX/Leica的訂貨產品資訊|訂貨資訊]]
-    *   **Leica ST4020 - 超微型全自動線性染色機**：[[Leica Biosystem/HI/Leica ST4020/介紹|介紹]] | [[Leica Biosystem/HI/Leica ST4020/招標規格|招標規格]] | [[Leica Biosystem/HI/Leica ST4020/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/HI/Leica ST4020/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore SPECTRA ST - 高通量全自動雙臂組織染色機**：[[HI/HistoCore SPECTRA ST/介紹|介紹]] | [[HI/HistoCore SPECTRA ST/招標規格|招標規格]] | [[HI/HistoCore SPECTRA ST/競爭對手比較|競爭對手比較]] | [[HI/HistoCore SPECTRA ST/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **Leica ST5010 - 全自動組織染色機**：[[HI/Leica ST5010/介紹|介紹]] | [[HI/Leica ST5010/招標規格|招標規格]] | [[HI/Leica ST5010/競爭對手比較|競爭對手比較]] | [[HI/Leica ST5010/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **HistoCore CHROMAX - 全自動染色與封片整合工作站**：[[HI/HistoCore CHROMAX/介紹|介紹]] | [[HI/HistoCore CHROMAX/招標規格|招標規格]] | [[HI/HistoCore CHROMAX/競爭對手比較|競爭對手比較]] | [[HI/HistoCore CHROMAX/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **Leica ST4020 - 超微型全自動線性染色機**：[[HI/Leica ST4020/介紹|介紹]] | [[HI/Leica ST4020/招標規格|招標規格]] | [[HI/Leica ST4020/競爭對手比較|競爭對手比較]] | [[HI/Leica ST4020/Leica的訂貨產品資訊|訂貨資訊]]
 
-> **快速檢查：** 關於 HI 設備的特殊與防禦性規格清單，請參考 [[Leica Biosystem/HI/人工確認清單|HI 設備人工確認清單]]。
+> **快速檢查：** 關於 HI 設備的特殊與防禦性規格清單，請參考 [[HI/人工確認清單|HI 設備人工確認清單]]。
 
 ---
 
 ### 💻 數位病理掃描儀 (Digital Pathology - DP)
 提供臨床與學術研究使用的全玻片數位化明視野與多模式螢光掃描設備。
 
-*   **Aperio GT 450 - 極速高通量數位病理玻片掃描儀**：[[Leica Biosystem/DP/Aperio GT 450/介紹|介紹]] | [[Leica Biosystem/DP/Aperio GT 450/招標規格|招標規格]] | [[Leica Biosystem/DP/Aperio GT 450/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/DP/Aperio GT 450/Leica的訂貨產品資訊|訂貨資訊]]
-*   **Aperio GT 180 - 高通量數位病理玻片掃描儀**：[[Leica Biosystem/DP/Aperio GT 180/介紹|介紹]] | [[Leica Biosystem/DP/Aperio GT 180/招標規格|招標規格]] | [[Leica Biosystem/DP/Aperio GT 180/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/DP/Aperio GT 180/Leica的訂貨產品資訊|訂貨資訊]]
-*   **Aperio CS5 - 桌上型五片裝數位病理玻片掃描儀**：[[Leica Biosystem/DP/Aperio CS5/介紹|介紹]] | [[Leica Biosystem/DP/Aperio CS5/招標規格|招標規格]] | [[Leica Biosystem/DP/Aperio CS5/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/DP/Aperio CS5/Leica的訂貨產品資訊|訂貨資訊]]
-*   **Aperio VERSA - 研究級多模式全螢光玻片掃描儀**：[[Leica Biosystem/DP/Aperio VERSA/介紹|介紹]] | [[Leica Biosystem/DP/Aperio VERSA/招標規格|招標規格]] | [[Leica Biosystem/DP/Aperio VERSA/競爭對手比較|競爭對手比較]] | [[Leica Biosystem/DP/Aperio VERSA/Leica的訂貨產品資訊|訂貨資訊]]
+*   **Aperio GT 450 - 極速高通量數位病理玻片掃描儀**：[[DP/Aperio GT 450/介紹|介紹]] | [[DP/Aperio GT 450/招標規格|招標規格]] | [[DP/Aperio GT 450/競爭對手比較|競爭對手比較]] | [[DP/Aperio GT 450/Leica的訂貨產品資訊|訂貨資訊]]
+*   **Aperio GT 180 - 高通量數位病理玻片掃描儀**：[[DP/Aperio GT 180/介紹|介紹]] | [[DP/Aperio GT 180/招標規格|招標規格]] | [[DP/Aperio GT 180/競爭對手比較|競爭對手比較]] | [[DP/Aperio GT 180/Leica的訂貨產品資訊|訂貨資訊]]
+*   **Aperio CS5 - 桌上型五片裝數位病理玻片掃描儀**：[[DP/Aperio CS5/介紹|介紹]] | [[DP/Aperio CS5/招標規格|招標規格]] | [[DP/Aperio CS5/競爭對手比較|競爭對手比較]] | [[DP/Aperio CS5/Leica的訂貨產品資訊|訂貨資訊]]
+*   **Aperio VERSA - 研究級多模式全螢光玻片掃描儀**：[[DP/Aperio VERSA/介紹|介紹]] | [[DP/Aperio VERSA/招標規格|招標規格]] | [[DP/Aperio VERSA/競爭對手比較|競爭對手比較]] | [[DP/Aperio VERSA/Leica的訂貨產品資訊|訂貨資訊]]
 
-> **快速檢查：** 關於 DP 設備的特殊與防禦性規格清單，請參考 [[Leica Biosystem/DP/人工確認清單|DP 設備人工確認清單]]。
+> **快速檢查：** 關於 DP 設備的特殊與防禦性規格清單，請參考 [[DP/人工確認清單|DP 設備人工確認清單]]。
 
 ---
 
