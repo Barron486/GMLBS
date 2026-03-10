@@ -21,13 +21,13 @@ description: A knowledge base for Leica Biosystems Pathology Products
     *   **HistoCore PEGASUS - 高通量雙缸組織處理機**：[[HI/HistoCore PEGASUS/介紹|介紹]] | [[HI/HistoCore PEGASUS/招標規格|招標規格]] | [[HI/HistoCore PEGASUS/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PEGASUS/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore PEARL - 桌上型單缸組織處理機**：[[HI/HistoCore PEARL/介紹|介紹]] | [[HI/HistoCore PEARL/招標規格|招標規格]] | [[HI/HistoCore PEARL/競爭對手比較|競爭對手比較]] | [[HI/HistoCore PEARL/Leica的訂貨產品資訊|訂貨資訊]]
 *   **全/半自動切片機**
-    *   **Leica RM2255 - 全自動旋轉式切片機**：[[HI/Leica RM2255/介紹|介紹]] | [[HI/Leica RM2255/招標規格|招標規格]] | [[HI/Leica RM2255/競爭對手比較|競爭對手比較]] | [[HI/Leica RM2255/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore AUTOCUT - 全自動旋轉式切片機**：[[HI/HistoCore AUTOCUT/介紹|介紹]] | [[HI/HistoCore AUTOCUT/招標規格|招標規格]] | [[HI/HistoCore AUTOCUT/競爭對手比較|競爭對手比較]] | [[HI/HistoCore AUTOCUT/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore MULTICUT - 半自動旋轉式切片機**：[[HI/HistoCore MULTICUT/介紹|介紹]] | [[HI/HistoCore MULTICUT/招標規格|招標規格]] | [[HI/HistoCore MULTICUT/競爭對手比較|競爭對手比較]] | [[HI/HistoCore MULTICUT/Leica的訂貨產品資訊|訂貨資訊]]
     *   **HistoCore BIOCUT - 手動旋轉式切片機**：[[HI/HistoCore BIOCUT/介紹|介紹]] | [[HI/HistoCore BIOCUT/招標規格|招標規格]] | [[HI/HistoCore BIOCUT/競爭對手比較|競爭對手比較]] | [[HI/HistoCore BIOCUT/Leica的訂貨產品資訊|訂貨資訊]]
 *   **冷凍切片機**
     *   **Leica CM1950 - 高性能臨床與研究級冷凍切片機**：[[HI/Leica CM1950/介紹|介紹]] | [[HI/Leica CM1950/招標規格|招標規格]] | [[HI/Leica CM1950/競爭對手比較|競爭對手比較]] | [[HI/Leica CM1950/Leica的訂貨產品資訊|訂貨資訊]]
     *   **Leica CM1860 - 臨床診斷級半自動冷凍切片機**：[[HI/Leica CM1860/介紹|介紹]] | [[HI/Leica CM1860/招標規格|招標規格]] | [[HI/Leica CM1860/競爭對手比較|競爭對手比較]] | [[HI/Leica CM1860/Leica的訂貨產品資訊|訂貨資訊]]
+    *   **Leica CM3050 S - 研究級電動冷凍切片機**：[[HI/Leica CM3050 S/介紹|介紹]] | [[HI/Leica CM3050 S/招標規格|招標規格]] | [[HI/Leica CM3050 S/競爭對手比較|競爭對手比較]] | [[HI/Leica CM3050 S/Leica的訂貨產品資訊|訂貨資訊]]
 *   **全自動染色機**
     *   **HistoCore SPECTRA ST - 高通量全自動雙臂組織染色機**：[[HI/HistoCore SPECTRA ST/介紹|介紹]] | [[HI/HistoCore SPECTRA ST/招標規格|招標規格]] | [[HI/HistoCore SPECTRA ST/競爭對手比較|競爭對手比較]] | [[HI/HistoCore SPECTRA ST/Leica的訂貨產品資訊|訂貨資訊]]
     *   **Leica ST5010 - 全自動組織染色機**：[[HI/Leica ST5010/介紹|介紹]] | [[HI/Leica ST5010/招標規格|招標規格]] | [[HI/Leica ST5010/競爭對手比較|競爭對手比較]] | [[HI/Leica ST5010/Leica的訂貨產品資訊|訂貨資訊]]
