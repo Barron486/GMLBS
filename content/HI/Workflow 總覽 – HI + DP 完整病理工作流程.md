@@ -28,17 +28,17 @@
      │               │
      ▼               ▼
 ┌─────────────────────────┐
-│ ④ 染色 & 封片            │  ← SPECTRA ST / CHROMAX / ST5010 / ST4020
+│ ④ 染色 & 封片           │  ← SPECTRA ST / CHROMAX / ST5010 / ST4020
 └───────────┬─────────────┘
             │
             ▼
 ┌─────────────────────────┐
-│ ④ 數位掃描 & AI 分析     │  ← Aperio GT 450 DX / GT 180 / CS5 / VERSA
+│ ⑤ 數位掃描 & AI 分析    │  ← Aperio GT 450 DX / GT 180 / CS5 / VERSA
 └───────────┬─────────────┘     + Aperio HALO AP 影像管理平台
             │
             ▼
 ┌─────────────────────────┐
-│ ⑤ AI 影像管理 & 報告     │  ← Aperio HALO AP + Aperio AI Store
+│ ⑥ AI 影像管理 & 報告    │  ← Aperio HALO AP + Aperio AI Store
 └─────────────────────────┘
 ```
 
