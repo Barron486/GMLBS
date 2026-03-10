@@ -6,40 +6,26 @@
 
 ## 🗺️ 流程全景圖
 
-```
-組織檢體送達
-    │
-    ▼
-┌───────────────────────────────┐
-│  ① 組織處理 / 脫水            │  ← PELORIS 3 / PEGASUS / PEARL
-└──────────────┬────────────────┘
-               │
-               ▼
-┌───────────────────────────────┐
-│  ② 組織包埋 (Embedding)       │  ← Arcadia C & S
-└──────────────┬────────────────┘
-               │
-        ┌──────┴──────┐
-        ▼             ▼
-┌────────────┐  ┌─────────────┐
-│ ③ 常規     │  │ ③' 術中急凍 │    ← AUTOCUT / MULTICUT / BIOCUT
-│    石蠟切片 │  │    冷凍切片  │    ← CM1950 / CM1860 / CM3050 S
-└─────┬──────┘  └──────┬──────┘
-      │                │
-      ▼                ▼
-┌───────────────────────────────┐
-│  ④ 染色 & 封片                │  ← SPECTRA ST / CHROMAX / ST5010 / ST4020
-└──────────────┬────────────────┘
-               │
-               ▼
-┌───────────────────────────────┐
-│  ⑤ 數位掃描 & AI 分析        │  ← Aperio GT 450 DX / GT 180 / CS5 / VERSA
-└──────────────┬────────────────┘    + Aperio HALO AP 影像管理平台
-               │
-               ▼
-┌───────────────────────────────┐
-│  ⑥ AI 影像管理 & 報告        │  ← Aperio HALO AP + Aperio AI Store
-└───────────────────────────────┘
+```mermaid
+flowchart TD
+    START(["組織檢體送達"]) --> S1
+
+    S1["1 組織處理 / 脫水<br/>PELORIS 3 · PEGASUS · PEARL"]
+    S1 --> S2["2 組織包埋<br/>Arcadia C and S"]
+
+    S2 --> S3a["3 常規石蠟切片<br/>AUTOCUT · MULTICUT · BIOCUT"]
+    S2 --> S3b["3' 術中急凍切片<br/>CM1950 · CM1860 · CM3050 S"]
+
+    S3a --> S4["4 染色 and 封片<br/>SPECTRA ST · CHROMAX · ST5010 · ST4020"]
+    S3b --> S4
+
+    S4 --> S5["5 數位掃描 and AI 分析<br/>GT 450 DX · GT 180 · CS5 · VERSA"]
+    S5 --> S6["6 AI 影像管理 and 報告<br/>HALO AP · Aperio AI Store"]
+
+    classDef process fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef scan fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    class S1,S2,S3a,S3b,S4 process
+    class S5,S6 scan
 ```
 
 > **💡 業務關鍵訊息**：Leica Biosystems 是全球**唯一**能從組織處理、切片、染色、數位掃描到 AI 影像分析提供**一條龍解決方案**的廠商。這代表每台設備之間的耗材、玻片架、追溯系統與影像平台都能無縫銜接，減少轉換錯誤與人力成本。
@@ -52,32 +38,28 @@
 
 ```mermaid
 flowchart LR
-    %% 傳統常規流程
-    subgraph 傳統常規流程 [🐢 傳統常規流程 (過夜處理，約需 12-24 小時)]
+    subgraph traditional ["🐢 傳統常規流程 — 過夜處理 約 12-24 小時"]
         direction LR
-        A1(組織處理<br/>8-12 小時<br/>一般脫水機) --> A2(包埋<br/>30 分鐘)
-        A2 --> A3(切片<br/>15 分鐘)
-        A3 --> A4(染色與封片<br/>45-60 分鐘)
-        A4 --> A5(人工顯微鏡檢<br/>閱片/借片：數小時至數天)
+        A1["組織處理<br/>8-12 小時<br/>一般脫水機"] --> A2["包埋<br/>30 分鐘"]
+        A2 --> A3["切片<br/>15 分鐘"]
+        A3 --> A4["染色與封片<br/>45-60 分鐘"]
+        A4 --> A5["人工顯微鏡檢<br/>數小時至數天"]
     end
 
-    %% Leica 高效數位流程
-    subgraph Leica流程 [🚀 Leica 一條龍快速數位流程 (Same-Day，約需 2-3 小時)]
+    subgraph leica ["🚀 Leica 快速數位流程 — Same-Day 約 2-3 小時"]
         direction LR
-        B1(快速組織處理<br/>1 小時<br/>PELORIS 3) -.無縫.-> B2(高效包埋<br/>15 分鐘<br/>Arcadia)
-        B2 -.-> B3(標準化切片<br/>10 分鐘<br/>AUTOCUT)
-        B3 -.依客戶.-> B4(極速染色封片<br/>30 分鐘<br/>SPECTRA)
-        B4 ==同玻片架==> B5(高通量掃描<br/>1 分鐘/片<br/>GT 450 DX)
-        B5 ==數位歸檔==> B6(AI 輔助判讀<br/>即時<br/>HALO AP)
+        B1["快速組織處理<br/>1 小時<br/>PELORIS 3"] -.-> B2["高效包埋<br/>15 分鐘<br/>Arcadia"]
+        B2 -.-> B3["標準化切片<br/>10 分鐘<br/>AUTOCUT"]
+        B3 -.-> B4["極速染色封片<br/>30 分鐘<br/>SPECTRA"]
+        B4 ==> B5["高通量掃描<br/>1 分鐘/片<br/>GT 450 DX"]
+        B5 ==> B6["AI 輔助判讀<br/>即時<br/>HALO AP"]
     end
-    
-    傳統常規流程 ~~~ Leica流程
 
-    classDef leica fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
-    classDef traditional fill:#f5f5f5,stroke:#9e9e9e,stroke-width:2px,stroke-dasharray: 5 5;
-    
-    class B1,B2,B3,B4,B5,B6 leica;
-    class A1,A2,A3,A4,A5 traditional;
+    classDef leicaStyle fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+    classDef tradStyle fill:#f5f5f5,stroke:#9e9e9e,stroke-width:2px,stroke-dasharray: 5 5
+
+    class B1,B2,B3,B4,B5,B6 leicaStyle
+    class A1,A2,A3,A4,A5 tradStyle
 ```
 
 ---
