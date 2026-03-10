@@ -46,6 +46,42 @@
 
 ---
 
+## ⏱️ 工作流程時間軸差異 (Timeline Comparison)
+
+> **💡 業務銷售話術**：透過 Leica 的高階設備（如 PELORIS 3 的 1 小時快速打件與 GT 450 DX 的極速掃描），可將原本需要「過夜」的常規病理流程，大幅縮短至**同一天內 (Same-Day Diagnosis)** 完成，這對於急件活檢 (Biopsy) 與癌症確診搶時效至關重要。
+
+```mermaid
+flowchart LR
+    %% 傳統常規流程
+    subgraph 傳統常規流程 [🐢 傳統常規流程 (過夜處理，約需 12-24 小時)]
+        direction LR
+        A1(組織處理<br/>8-12 小時<br/>一般脫水機) --> A2(包埋<br/>30 分鐘)
+        A2 --> A3(切片<br/>15 分鐘)
+        A3 --> A4(染色與封片<br/>45-60 分鐘)
+        A4 --> A5(人工顯微鏡檢<br/>閱片/借片：數小時至數天)
+    end
+
+    %% Leica 高效數位流程
+    subgraph Leica流程 [🚀 Leica 一條龍快速數位流程 (Same-Day，約需 2-3 小時)]
+        direction LR
+        B1(快速組織處理<br/>1 小時<br/>PELORIS 3) -.無縫.-> B2(高效包埋<br/>15 分鐘<br/>Arcadia)
+        B2 -.-> B3(標準化切片<br/>10 分鐘<br/>AUTOCUT)
+        B3 -.依客戶.-> B4(極速染色封片<br/>30 分鐘<br/>SPECTRA)
+        B4 ==同玻片架==> B5(高通量掃描<br/>1 分鐘/片<br/>GT 450 DX)
+        B5 ==數位歸檔==> B6(AI 輔助判讀<br/>即時<br/>HALO AP)
+    end
+    
+    傳統常規流程 ~~~ Leica流程
+
+    classDef leica fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef traditional fill:#f5f5f5,stroke:#9e9e9e,stroke-width:2px,stroke-dasharray: 5 5;
+    
+    class B1,B2,B3,B4,B5,B6 leica;
+    class A1,A2,A3,A4,A5 traditional;
+```
+
+---
+
 # 🔬 Part I：組織病理設備 (HI)
 
 ---
