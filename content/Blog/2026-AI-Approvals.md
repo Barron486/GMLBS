@@ -45,6 +45,7 @@ tags:
 *   **技術亮點**：**ArteraAI Prostate** 在獲得 FDA 的 De Novo 授權後，於最新版的 NCCN 攝護腺癌指南中被正式推薦。這是一套結合了數位病理影像與臨床數據的「多模態 AI（Multimodal AI）」測試工具。
 *   **臨床價值**：它超越了傳統的格里森分數（Gleason Score），能預測局部攝護腺癌患者 10 年內的遠端轉移與疾病特異性死亡風險。這意味著 AI 已經從單純的「找腫瘤」，進化到了能實質影響臨床主治醫師「要不要給予積極治療」的決策層級。
 *   *(資料來源：[ArteraAI Prostate Test Included in NCCN Guidelines](https://artera.ai/news/arteraai-announced-as-the-first-and-only-predictive-test-for-therapy-personalization-in-the-2024-nccn-guidelines-for-prostate-cancer))*
+> 👉 **延伸閱讀**：[[Blog/ArteraAI-Clinical-Case-Studies|查看實際案例解析：AI 如何改變這四位前列腺癌患者的臨床決策]]
 
 ---
 
