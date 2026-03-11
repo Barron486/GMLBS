@@ -9,6 +9,13 @@ description: A knowledge base for Leica Biosystems Pathology Products
 
 這個系統協助您快速查找並預覽 Leica 各項病理與數位診斷設備的介紹、競爭對手比較、訂貨資訊與 **招標規格文件**。
 
+## 💡 產業新知 (New Knowledge)
+
+> **最新專欄**：了解計算病理學如何改變未來的癌症診斷與治療！
+> 👉 [[Blog/2026-DP-Breakthroughs|2025-2026 數位與計算病理學的最新突破：從精準診斷到療效預測]] (AI 伴隨診斷、基礎模型與 FDA 最新認證)
+
+---
+
 ## 產品分類總覽
 
 請選擇您要查詢的產品類別：
