@@ -57,3 +57,8 @@ tags:
 ## 總結
 
 這四個案例充分證明了，即使在傳統病理分級與 NCCN 指南下看似相似的患者群體，病程的發展仍可能有極大差異。ArteraAI 透過數位病理影像與臨床數據的深度學習，為「個人化精準醫療」提供了全新的解方。
+
+---
+
+## 參考資料 / 延伸閱讀
+*   **ArteraAI 白皮書 (PDF)**：*[The Impact of ArteraAI on Active Surveillance Decisions](https://artera.ai/wp-content/uploads/active-surveillance-white-paper.pdf)*
