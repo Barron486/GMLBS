@@ -1,31 +1,57 @@
-# CytoVision® 訂貨與產品規格資訊
+# CytoVision® 系統選型與訂貨規格指南
 
-> ⚠️ **注意**：以下料號清單僅供業務參考大方向。CytoVision 是高度客製化的系統建置，需根據客戶現有顯微鏡、期望通量 (Manual, DM6 B, GSL-120) 以及應用模組 (Karyotyping / FISH / CGH) 開立專屬 BOM 表。實際報價與最終料號請務必以 **Leica Biosystems 官方最新 Pricing Tool** 或內部報價系統為準。
+> ⚠️ **注意**：CytoVision 是高度客製化的系統建置，牽涉硬體相容性與 IT 網域設定。本文件提供業務**「選型決策樹」**、**「版本相容性規則」**與**「硬體組合」**，以幫助您引導客戶選擇正確架構。最終料號請務必以 **Leica Biosystems 官方最新 Pricing Tool** 為準。
+
+---
+
+## 🌳 業務銷售決策樹 (CytoVision Configuration Decision Tree)
+
+為協助客戶挑選最適合的系統組合，請依循以下決策樹進行探詢：
+
+```mermaid
+graph TD
+    A[每日細胞遺傳/FISH檢體量多寡？] -->|低通量 < 10片/日<br>或特殊困難檢體| B(手動擷取工作站<br>Manual System)
+    A -->|中高通量 10 - 50片/日| C(半自動掃描系統<br>DM6 B)
+    A -->|超高通量 > 50片/日<br>過夜無人值守| D(全自動送片機系統<br>GSL-120)
+
+    B --> E{應用需求為何？}
+    C --> E
+    D --> E
+
+    E -->|染色體核型分析| F[選配：CytoVision Karyotyper<br>+ Auto Metaphase Finding]
+    E -->|螢光原位雜交| G[選配：CytoVision FISH<br>+ Z-stack 模組]
+    E -->|比較基因體| H[選配：CytoVision CGH]
+
+    F --> I{醫師是否需在自己辦公室發報告？}
+    G --> I
+    H --> I
+
+    I -->|否, 在掃描機旁看| J[Standalone 單機授權即可]
+    I -->|是, 多人異地覆核| K[加配：CytoVision Server 中央伺服器<br>+ N套 CytoVision Review Station]
+```
 
 ---
 
-## 📦 CytoVision 主要系統組合平台
+## 📦 CytoVision 硬體架構與相容性 (Hardware & Optics)
 
-CytoVision 依據掃描與上片方式分為不同層級，業務須先確認客戶之預期通量：
+CytoVision 依據自動化程度分為不同等級，且軟體能相容市面上兩大類核心硬體（顯微鏡與相機）：
 
-### 1. 手動載物台系統 (Manual Scanning)
-適用於樣本量少，僅需軟體輔助排盤或拍攝螢光的單位。
-*   **CytoVision Manual System**
-    *   *內容物簡述*：含 CytoVision 工作站主機、高解析相機、基本軟體授權。**不含**全自動電動載物台。需人工尋找細胞，但享有完整的軟體分析與報告工具。
+### 1. 系統自動化層級
+*   **Manual System (手動擷取)**：不含電動載物台，倚靠人工手動尋找細胞並軟體拍照分析。
+*   **Automated System (自動掃描)**：搭配電動顯微鏡與電動載物台 (例如 8 片裝)，支援小批次無人值守掃描 (Walk-away)。
+*   **GSL-120 (超高通量)**：配備 120 片大容量送片機與內建條碼機，並具備自動滴油功能，專為代檢中心與國家級實驗室設計。
 
-### 2. 半自動/自動掃描系統 (Automated Scanning - DM6 B)
-適合多數中大型醫院與檢驗所。
-*   **CytoVision with Leica DM6 B**
-    *   *內容物簡述*：整合 Leica DM6 B 全電動智能顯微鏡、電動載物台 (通常為 8 片裝)、高解析明視野/螢光相機、自動對焦模組。
-    *   *特色*：支援無人值守的小批次自動尋找分裂相 (Metaphase finding) 與掃描擷取。
+### 2. 支援的顯微鏡主機 (Supported Microscopes)
+許多醫院希望「沿用」既有顯微鏡以節省預算。CytoVision 的開放性支援多款主流廠牌，但如果要做到**全自動掃描 (尋找分裂相、Z-Stack)**，必須配備**全電動型號 (Fully Motorized)**：
+*   **Leica (首選推薦)**：**DM6 B** (現行旗艦首選)、DM4 B、DM6000 B、DM4000 B、DM2500/3000 (手動或局動電動)。
+*   **Olympus**：**BX63**、**BX61** (全電動首選)、BX53、BX51、BX43。
+*   **Zeiss**：AxioImager Z2、AxioImager M2。
+> 💡 **業務話術**：「我們能將您現有的 Olympus BX61 升級為 CytoVision 自動工作站，只要加裝電動載物台與相機即可，大幅保護您的硬體投資！」
 
-### 3. 超高通量全自動系統 (High Throughput - GSL-120)
-適合國家級參考實驗室或巨量檢體代檢中心。
-*   **CytoVision GSL-120 Slide Loader System**
-    *   *內容物簡述*：配備獨家 120 片大容量自動送片機、內建條碼讀取器、整合式油鏡加滴系統。
-    *   *特色*：真正的「Walk-away」過夜連續掃描能力。
-
----
+### 3. 支援的照相機 (Supported Cameras)
+核型分析與 FISH 需要極高感光度與解析度的相機：
+*   **新世代主力配備**：**Leica 12 MP (百萬畫素) CMOS 高感度相機** (CytoVision DX 標配) 或是 Leica K3M / K3C 系列。具備極低的雜訊與超快幀率。
+*   **傳統與第三方相容**：支援 JAI、IDS、Point Grey (FLIR Blackfly) 等工業級 CCD/CMOS 相機。
 
 ## 🧩 核心軟體分析模組 (Application Modules)
 
@@ -44,14 +70,21 @@ CytoVision 依據掃描與上片方式分為不同層級，業務須先確認客
 
 ---
 
-## 🧑‍💻 IT 與伺服器設置架構 (IT & Infrastructure)
+## 📅 版本演進與網路共串相容性 (Version Evolution & Network Compatibility)
 
-CytoVision 產生大量高解析影像與病患資料，須確認院方 IT 環境：
+在 Client-Server 架構中，多台擷取工作站 (Capture) 與覆核工作站 (Review) 必須連接到 CytoVision Server (Genus)。**「版本是否相容」是售後與升級最常遇到的雷區**。
 
-*   **系統架構**：Client-Server 架構。主機擷取影像後，資料需存入中央資料庫。
-*   **資料庫需求**：依賴於 Microsoft SQL Server 做為後端引擎。
-*   **伺服器主機**：客戶可自行依 Leica 硬體規格準備 Server，或向 Leica/代理商採購整包方案。
-*   **儲存空間 (Storage)**：NAS 或 SAN。請務必與醫院資訊室 (IT) 溝通足夠的儲存空間規劃（尤其是大量做多色 Z-Stack FISH 影像的單位）。
+### 1. 版本演進差異 (Version History)
+*   **V 7.2 (Legacy)**：基於 Windows 7 的舊世代系統。由於微軟已停止更新，醫院資安通常不再允許連網。**不支援**新型 12MP CMOS 相機與較新的硬體。
+*   **V 7.4 / V 7.5 (Transition)**：開始過渡並支援 Windows 10 作業系統。
+*   **V 7.7 (Current Mature)**：目前主流穩定的 Windows 10 / Server 2016/2019 版本。資料庫效能優化，支援更高的網路安全性。
+*   **CytoVision DX (Next Gen)**：最新世代，專為搭配 Windows 11 與最新一代 Leica 12 MP 相機設計，操作介面現代化，處理速度巨幅提升。
+
+### 2. 客戶升級與「共串規則」 (Network Compatibility Rules)
+當客戶想在既有的 CytoVision 網域上「擴充」購買新機台時，請務必遵守以下鐵律：
+1.  **Server 版本必須大於或等於 Client 端**：你不可能將一台 V7.7 的掃描站連上一台 V7.2 的伺服器。
+2.  **強烈建議「同版號運行」**：為了確保資料庫 (SQL) 結構一致性以及影像標記、排盤檔案在不同工作站中不會發生無法讀取 (Corrupted) 的問題，**整個網域內的 Capture Station、Server 與 Review Station 必須升級到相同的版號 (e.g., 全面上 V7.7)**。
+3.  **舊換新/擴充的業務機會**：如果客戶的 Server 還是 V7.2，當他要買一台全新的 GSL-120 (標配 V7.7 或 DX) 時，**必須一併購買 Server 與舊有 Review 軟體的「系統升級包」**。這是絕佳的 Up-sell 機會，能一次性幫醫院解決微軟 Win 7 的資安稽核危機。
 
 ---
 
