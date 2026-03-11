@@ -17,8 +17,8 @@ tags:
 
 過去，病理科醫師主要依賴肉眼判讀切片來確診癌症；如今，AI 模型已能從數位影像中「看」出過去人類無法察覺的模式，進而預測治療療效。
 
-*   **ASCO 的亮點 (<a href="https://ascopubs.org/" target="_blank">ASCO Annual Meeting</a>)**：研究顯示，數位病理 AI 能大幅提升病理醫師在判讀乳癌 HER2-low 與 ultralow 表現時的**一致性 (Diagnostic Agreement)**。這對於精準篩選適合接受新型 ADC (Antibody-Drug Conjugates) 標靶藥物的病患至關重要。*(引用出處：De Brot M., et al. "AI-assisted HER2 assessment improves pathologist concordance for HER2-low and HER2-ultralow breast cancer.")*
-*   **直腸結腸癌的空間細胞圖譜 (<a href="https://pathsocjournals.onlinelibrary.wiley.com/journal/10969896" target="_blank">The Journal of Pathology</a>)**：2025 年初發表的重點研究，利用計算病理學分析直腸結腸癌組織中的「空間細胞排列模式 (Spatial cellular patterns)」。AI 藉由辨識特定的細胞型態與排列，成功區分出疾病進展與對特定治療有反應的病患群體。*(引用出處："Spatial cellular patterns in the colorectal cancer tumor microenvironment", The Journal of Pathology, 2025)*
+*   **ASCO 的亮點 (<a href="https://ascopubs.org/doi/10.1200/JCO.2025.43.16_suppl.1014" target="_blank">ASCO Annual Meeting</a>)**：研究顯示，數位病理 AI 能大幅提升病理醫師在判讀乳癌 HER2-low 與 ultralow 表現時的**一致性 (Diagnostic Agreement)**。這對於精準篩選適合接受新型 ADC (Antibody-Drug Conjugates) 標靶藥物的病患至關重要。*(引用出處：De Brot M., et al. "AI-assisted HER2 assessment improves pathologist concordance for HER2-low and HER2-ultralow breast cancer.")*
+*   **直腸結腸癌的空間細胞圖譜 (<a href="https://pathsocjournals.onlinelibrary.wiley.com/doi/full/10.1002/path.6378" target="_blank">The Journal of Pathology</a>)**：2025 年初發表的重點研究，利用計算病理學分析直腸結腸癌組織中的「空間細胞排列模式 (Spatial cellular patterns)」。AI 藉由辨識特定的細胞型態與排列，成功區分出疾病進展與對特定治療有反應的病患群體。*(引用出處："Spatial cellular patterns in the colorectal cancer tumor microenvironment", The Journal of Pathology, 2025)*
 
 ## 2. 病理學基礎模型 (Foundation Models) 的爆發式成長
 
@@ -32,8 +32,8 @@ tags:
 
 科學研究的最終目的是要能真正應用於臨床。近期見證了幾項關鍵的法規突破：
 
-*   **首款計算病理伴隨診斷獲突破性認證 (<a href="https://www.roche.com" target="_blank">Roche</a>)**：美國 FDA 授予羅氏 (Roche) 的 **VENTANA TROP2 (EPR20043) RxDx Device**「突破性醫材 (Breakthrough Device Designation)」資格。該工具基於 AstraZeneca 開發的定量連續評分 (QCS) 平台，用於評估非小細胞肺癌 (NSCLC) 的 TROP2 標記。*(引用出處："FDA grants Breakthrough Device Designation for Roche’s AI-driven TROP2 computational pathology companion diagnostic")*
-*   **多模態預後工具的 De Novo 授權 (<a href="https://artera.ai" target="_blank">ArteraAI</a>)**：FDA 批准了 **ArteraAI Prostate** 的 De Novo 行銷授權，這是一款結合病理切片影像與臨床數據的「多模態 (Multimodel) AI 工具」，用於預測非轉移性前列腺癌的長期預後，為數位病理在風險分層 (Risk Stratification) 上的臨床應用打了一劑強心針。*(引用出處："Artera receives FDA De Novo authorization for ArteraAI Prostate")*
+*   **首款計算病理伴隨診斷獲突破性認證 (<a href="https://www.roche.com/media/releases/med-cor-2025-04-29" target="_blank">Roche</a>)**：美國 FDA 授予羅氏 (Roche) 的 **VENTANA TROP2 (EPR20043) RxDx Device**「突破性醫材 (Breakthrough Device Designation)」資格。該工具基於 AstraZeneca 開發的定量連續評分 (QCS) 平台，用於評估非小細胞肺癌 (NSCLC) 的 TROP2 標記。*(引用出處："FDA grants Breakthrough Device Designation for Roche’s AI-driven TROP2 computational pathology companion diagnostic")*
+*   **多模態預後工具的 De Novo 授權 (<a href="https://www.businesswire.com/news/home/20240304675510/en/ArteraAI-Announced-as-the-First-and-Only-Predictive-Test-for-Therapy-Personalization-in-the-2024-NCCN-Guidelines%C2%AE-for-Prostate-Cancer" target="_blank">ArteraAI</a>)**：FDA 批准了 **ArteraAI Prostate** 的 De Novo 行銷授權，這是一款結合病理切片影像與臨床數據的「多模態 (Multimodel) AI 工具」，用於預測非轉移性前列腺癌的長期預後，為數位病理在風險分層 (Risk Stratification) 上的臨床應用打了一劑強心針。*(引用出處："Artera receives FDA De Novo authorization for ArteraAI Prostate")*
 
 ## 總結
 
