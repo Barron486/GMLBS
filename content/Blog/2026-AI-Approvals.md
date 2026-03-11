@@ -24,7 +24,7 @@ tags:
 
 *   **技術亮點**：這款 AI 演算法能夠在橫跨多種組織與器官的切片影像中，協助病理醫師標示出「可疑的癌症病灶（suspicious cancer foci）」。
 *   **臨床價值**：它像是一個不知疲倦的「全科實習醫師」，在此廣泛偵測機制的輔助下，病理醫師能大幅減少在常規判讀中漏看微小病灶的風險，進一步提升整體實驗室的診斷信心與效率。
-*   *(資料來源：[U.S. FDA Grants Paige Breakthrough Device Designation for AI Application](https://paige.ai/fda-breakthrough-device-designation-pancancer-detect/))*
+*   *(資料來源：[U.S. FDA Grants Paige Breakthrough Device Designation for AI Application](https://www.paige.ai/press-releases/us-fda-grants-paige-breakthrough-device-designation-for-ai-application-that-detects-cancer-across-different-anatomic-sites))*
 
 ---
 
@@ -34,7 +34,7 @@ tags:
 
 *   **技術亮點**：這套系統被定位為數位病理的「集中式診斷樞紐（Centralized Diagnostic Hub）」。它不僅是個看圖軟體，更無縫整合了醫院的 LIS 系統與各家高階掃描設備。
 *   **臨床價值**：以往病理醫師可能需要在不同的軟體介面間切換來查閱病歷、看切片、並將結果輸入報告中。這類集中式平台打通了資料孤島，讓工作流程如同流水線般順暢，有效減輕了醫師的認知負荷。
-*   *(資料來源：[Lumea Secures FDA 510(k) Clearance for Viewer+](https://lumeadigital.com/lumea-secures-fda-510k-clearance-for-viewer-plus/))*
+*   *(資料來源：[Lumea Secures FDA 510(k) Clearance for Viewer+](https://lumeadigital.com/fda-cleared-digital-pathology-viewer/))*
 
 ---
 
@@ -44,7 +44,7 @@ tags:
 
 *   **技術亮點**：**ArteraAI Prostate** 在獲得 FDA 的 De Novo 授權後，於最新版的 NCCN 攝護腺癌指南中被正式推薦。這是一套結合了數位病理影像與臨床數據的「多模態 AI（Multimodal AI）」測試工具。
 *   **臨床價值**：它超越了傳統的格里森分數（Gleason Score），能預測局部攝護腺癌患者 10 年內的遠端轉移與疾病特異性死亡風險。這意味著 AI 已經從單純的「找腫瘤」，進化到了能實質影響臨床主治醫師「要不要給予積極治療」的決策層級。
-*   *(資料來源：[ArteraAI Prostate Test Included in NCCN Guidelines](https://artera.ai/arteraai-prostate-test-in-nCCN-guidelines/))*
+*   *(資料來源：[ArteraAI Prostate Test Included in NCCN Guidelines](https://artera.ai/news/arteraai-announced-as-the-first-and-only-predictive-test-for-therapy-personalization-in-the-2024-nccn-guidelines-for-prostate-cancer))*
 
 ---
 
