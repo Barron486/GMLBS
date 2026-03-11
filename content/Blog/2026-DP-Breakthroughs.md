@@ -33,7 +33,7 @@ tags:
 科學研究的最終目的是要能真正應用於臨床。近期見證了幾項關鍵的法規突破：
 
 *   **首款計算病理伴隨診斷獲突破性認證 (<a href="https://www.roche.com/media/releases/med-cor-2025-04-29" target="_blank">Roche</a>)**：美國 FDA 授予羅氏 (Roche) 的 **VENTANA TROP2 (EPR20043) RxDx Device**「突破性醫材 (Breakthrough Device Designation)」資格。該工具基於 AstraZeneca 開發的定量連續評分 (QCS) 平台，用於評估非小細胞肺癌 (NSCLC) 的 TROP2 標記。*(引用出處："FDA grants Breakthrough Device Designation for Roche’s AI-driven TROP2 computational pathology companion diagnostic")*
-*   **多模態預後工具的 De Novo 授權 (<a href="https://www.businesswire.com/news/home/20240304675510/en/ArteraAI-Announced-as-the-First-and-Only-Predictive-Test-for-Therapy-Personalization-in-the-2024-NCCN-Guidelines%C2%AE-for-Prostate-Cancer" target="_blank">ArteraAI</a>)**：FDA 批准了 **ArteraAI Prostate** 的 De Novo 行銷授權，這是一款結合病理切片影像與臨床數據的「多模態 (Multimodel) AI 工具」，用於預測非轉移性前列腺癌的長期預後，為數位病理在風險分層 (Risk Stratification) 上的臨床應用打了一劑強心針。*(引用出處："Artera receives FDA De Novo authorization for ArteraAI Prostate")*
+*   **多模態預後工具的 De Novo 授權 (<a href="https://artera.ai/news/arteraai-announced-as-the-first-and-only-predictive-test-for-therapy-personalization-in-the-2024-nccn-guidelines-for-prostate-cancer" target="_blank">ArteraAI</a>)**：FDA 批准了 **ArteraAI Prostate** 的 De Novo 行銷授權，這是一款結合病理切片影像與臨床數據的「多模態 (Multimodel) AI 工具」，用於預測非轉移性前列腺癌的長期預後，為數位病理在風險分層 (Risk Stratification) 上的臨床應用打了一劑強心針。*(引用出處："Artera receives FDA De Novo authorization for ArteraAI Prostate")*
 
 ## 總結
 
