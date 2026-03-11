@@ -11,8 +11,9 @@ description: A knowledge base for Leica Biosystems Pathology Products
 
 ## 💡 產業新知 (New Knowledge)
 
-> **最新專欄**：了解計算病理學如何改變未來的癌症診斷與治療！
+> **選讀專欄**：
 > 👉 [[Blog/2026-DP-Breakthroughs|2025-2026 數位與計算病理學的最新突破：從精準診斷到療效預測]] (AI 伴隨診斷、基礎模型與 FDA 最新認證)
+> 👉 [[Blog/Aperio-iQC-Quality-Control|數位顯微鏡下的「守門員」：病理醫師眼中的 AI 品質管控新標準]] (Aperio iQC 自動化影像分流與人機協作)
 
 ---
 
