@@ -52,6 +52,7 @@ description: A knowledge base for Leica Biosystems Pathology Products
 > **快速檢查：** 關於 HI 設備的特殊與防禦性規格清單，請參考 [[HI/人工確認清單|HI 設備人工確認清單]]。
 
 ### 🧪 耗材與試劑方案 (Consumables & Reagents)
+*   **[[HI/Leica_Biosystems_Histology_Consumables|Leica Biosystems 組織學消耗品完整說明]]**：官方旗艦耗材總覽（刀片、包埋盒、抗體、載玻片）。
 *   **[[Sales_Plan_Consumables|Leica Biosystems 銷售計劃 - 耗材與試劑篇]]**：涵蓋 Gill's, Harris, EA-50, 刀片, 蠟與 Clearene 二甲苯替代品。
 
 
@@ -79,6 +80,7 @@ description: A knowledge base for Leica Biosystems Pathology Products
 ## 📝 最新更新日誌 (Changelog)
 
 *   **2026.03.12**:
+    *   **Consumables**: 新增 [[HI/Leica_Biosystems_Histology_Consumables|Leica Biosystems 組織學消耗品完整說明]]，涵蓋 10 大類病理核心耗材。
     *   **Sales Plan**: 新增 [[Sales_Plan_Consumables|Leica Biosystems 耗材與試劑銷售計劃]]（繁體中文版），包含核心染色試劑、組織處理輔助液、切片刀片與封片膠的完整銷售指南。
 *   **2026.03.11**:
     *   **HALO AP**: 新增 [[DP/Aperio HALO AP/介紹|Aperio HALO AP 深度介紹]]（產品起源、系統架構、AI Store、串接協定與相容性、競品比較），含招標規格與訂貨資訊。
