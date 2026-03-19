@@ -1176,7 +1176,7 @@
     <li><a href="#workflow">工作流程</a></li>
     <li><a href="#configurator">配置選擇</a></li>
     <li><a href="#compare">比較</a></li>
-    <li><a href="#personas">銷售話術</a></li>
+    <li><a href="#personas">適用對象</a></li>
   </ul>
 </nav>
 
@@ -1627,7 +1627,7 @@
       </div>
 
       <div class="result-pitch">
-        <div class="result-pitch-label">建議業務切入話術</div>
+        <div class="result-pitch-label">此配置能為您解決的問題</div>
         <p id="resultPitch"></p>
       </div>
 
@@ -1703,9 +1703,9 @@
 
 <!-- SALES PERSONAS -->
 <section id="personas">
-  <div class="section-label">銷售策略</div>
-  <h2 class="section-title reveal">對不同決策者的切入話術</h2>
-  <p class="section-desc reveal">根據客戶角色選擇最有效的切入點，快速建立共鳴。</p>
+  <div class="section-label">適用對象</div>
+  <h2 class="section-title reveal">不同角色的常見考量與解答</h2>
+  <p class="section-desc reveal">無論您是實驗室主任、醫檢師或管理層，CytoInsight AI 都能針對您最關心的問題提供明確的解決方案。</p>
 
   <div class="personas-grid reveal">
     <div class="persona-card">
@@ -1713,13 +1713,13 @@
         <div class="persona-avatar">👨‍⚕️</div>
         <div>
           <div class="persona-name">科主任 / 主任</div>
-          <div class="persona-role">決策者 · 預算核准</div>
+          <div class="persona-role">實驗室管理者</div>
         </div>
       </div>
       <div class="persona-body">
-        <div class="persona-pain">核心痛點</div>
-        <div class="persona-concern">「人找不到、留不住——資深醫檢師培訓 3 年，一離職業務就停擺。」</div>
-        <div class="persona-script">建議話術</div>
+        <div class="persona-pain">常見考量</div>
+        <div class="persona-concern">「人力短缺、資深醫檢師難以培育留任，如何維持穩定的診斷產能？」</div>
+        <div class="persona-script">CytoInsight AI 的解答</div>
         <div class="persona-pitch">
           「主任，現在細胞遺傳室最大的挑戰不是設備，而是人才。CytoInsight AI 可以把原本需要老手才能做的染色體配對自動化，新人直接擔任審查角色——這不只是效率問題，更是您科室人才培育策略的關鍵轉型。」
         </div>
@@ -1731,13 +1731,13 @@
         <div class="persona-avatar">🔬</div>
         <div>
           <div class="persona-name">組長 / 資深醫檢師</div>
-          <div class="persona-role">使用者 · 意見領袖</div>
+          <div class="persona-role">日常使用者</div>
         </div>
       </div>
       <div class="persona-body">
-        <div class="persona-pain">核心痛點</div>
-        <div class="persona-concern">「每天把 46 條染色體一條一條拖過去對齊，重複又耗神，這才是最累的工作。」</div>
-        <div class="persona-script">建議話術</div>
+        <div class="persona-pain">常見考量</div>
+        <div class="persona-concern">「每天手動排列 46 條染色體相當耗時，能否讓我專注在真正需要判斷的案例上？」</div>
+        <div class="persona-script">CytoInsight AI 的解答</div>
         <div class="persona-pitch">
           「我知道最累的不是判讀染色體有無異常，而是把 46 條一條一條拖過去排列。CytoInsight 就是把這個最枯燥的動作自動化——AI 先做好初稿，您只需要做最後的專業確認。就像有個助理先幫您整理好，您再做最終判斷。」
         </div>
@@ -1748,14 +1748,14 @@
       <div class="persona-header">
         <div class="persona-avatar">💼</div>
         <div>
-          <div class="persona-name">院長 / 管理層</div>
-          <div class="persona-role">ROI 導向 · 競爭力考量</div>
+          <div class="persona-name">院長 / 行政管理層</div>
+          <div class="persona-role">資源規劃與績效評估</div>
         </div>
       </div>
       <div class="persona-body">
-        <div class="persona-pain">核心痛點</div>
-        <div class="persona-concern">「投資要能看到回報——設備費用高，但科室效率能真的改善嗎？」</div>
-        <div class="persona-script">建議話術</div>
+        <div class="persona-pain">常見考量</div>
+        <div class="persona-concern">「導入新系統的投資能否帶來可量化的效益，回收週期多長？」</div>
+        <div class="persona-script">CytoInsight AI 的解答</div>
         <div class="persona-pitch">
           「每個核型從 20 分鐘縮短至 5 分鐘，效率提升 4 倍。以每日 20 個樣本計算，一天節省 5 小時人力工時。折算人力成本，2–3 年內即可回收設備投資，同時改善 TAT、提升市場競爭力。」
         </div>
@@ -1768,8 +1768,8 @@
 <footer>
   <div class="footer-logo">Leica Biosystems · CytoInsight AI</div>
   <div class="footer-note">
-    本頁面為業務內部快速入門參考資料<br>
-    詳細技術規格與報價請洽 Leica Biosystems 台灣業務團隊
+    Leica Biosystems CytoInsight AI 產品資訊頁面<br>
+    詳細技術規格與採購諮詢請聯繫 Leica Biosystems 台灣服務團隊
   </div>
 </footer>
 
@@ -1989,7 +1989,56 @@ function resetConfig() {
 }
 
 function printResult() {
-  window.print();
+  const panel = document.getElementById('resultPanel');
+  const title = document.getElementById('resultTitle').textContent;
+  const subtitle = document.getElementById('resultSubtitle').textContent;
+  const configItems = Array.from(document.querySelectorAll('#resultConfig li')).map(li => `<li>${li.textContent}</li>`).join('');
+  const benefitItems = Array.from(document.querySelectorAll('#resultBenefits li')).map(li => `<li>${li.textContent}</li>`).join('');
+  const pitch = document.getElementById('resultPitch').textContent;
+  const badge = document.getElementById('resultBadge').textContent;
+
+  const printWin = window.open('', '_blank', 'width=800,height=700');
+  printWin.document.write(`<!DOCTYPE html><html lang="zh-TW"><head>
+  <meta charset="UTF-8">
+  <title>CytoInsight AI 配置建議 — ${title}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Sans TC', sans-serif; font-weight: 300; color: #1a1a2e; background: #fff; padding: 40px; max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; color: #0a1628; }
+    .subtitle { font-size: 14px; color: #666; margin-bottom: 32px; }
+    .badge { font-size: 36px; margin-bottom: 16px; display: block; }
+    .brand { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #00a882; margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    .box { border: 1px solid #e0e8f0; border-radius: 10px; padding: 20px; }
+    .box-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #00a882; margin-bottom: 10px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { font-size: 13px; padding: 5px 0; border-bottom: 1px solid #f0f4f8; display: flex; gap: 8px; color: #333; line-height: 1.5; }
+    li::before { content: "→"; color: #00a882; flex-shrink: 0; }
+    li:last-child { border-bottom: none; }
+    .pitch-box { background: #f0faf8; border: 1px solid #b2e0d8; border-radius: 10px; padding: 20px; margin-bottom: 24px; }
+    .pitch-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #007a60; margin-bottom: 10px; }
+    .pitch-text { font-size: 13px; line-height: 1.9; color: #333; }
+    .footer { font-size: 11px; color: #999; text-align: center; padding-top: 20px; border-top: 1px solid #eee; }
+    @media print { body { padding: 20px; } }
+  </style>
+  </head><body>
+  <div class="brand">Leica Biosystems / CytoInsight AI</div>
+  <span class="badge">${badge}</span>
+  <h1>${title}</h1>
+  <div class="subtitle">${subtitle}</div>
+  <div class="grid">
+    <div class="box"><div class="box-label">推薦配置</div><ul>${configItems}</ul></div>
+    <div class="box"><div class="box-label">主要效益</div><ul>${benefitItems}</ul></div>
+  </div>
+  <div class="pitch-box">
+    <div class="pitch-label">此配置能為您解決的問題</div>
+    <div class="pitch-text">${pitch}</div>
+  </div>
+  <div class="footer">Leica Biosystems 台灣服務團隊 · 詳細規格與採購諮詢請聯繫您的客服代表</div>
+  </body></html>`);
+  printWin.document.close();
+  printWin.focus();
+  setTimeout(() => { printWin.print(); printWin.close(); }, 500);
 }
 </script>
 </body>
