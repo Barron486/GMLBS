@@ -1507,94 +1507,94 @@
       </div>
     </div>
 
-    <!-- Q1: Lab Type -->
+    <!-- Q1: Existing System (首問，最重要分流) -->
     <div class="config-body" id="configBody">
       <div class="question-block active" data-q="0">
         <div class="question-step">問題 1 / 4</div>
-        <h4 class="question-text">您的實驗室類型是？</h4>
-        <p class="question-sub">選擇最符合貴機構的定位，以獲得精準的配置建議。</p>
-        <div class="options-grid">
-          <div class="option-card" data-q="0" data-v="medical_center" onclick="selectOption(this)">
-            <div class="option-icon">🏥</div>
-            <div class="option-title">醫學中心 / 大型醫院</div>
-            <div class="option-desc">病理科、細胞遺傳室，高業務量，有完整醫檢師團隊</div>
-          </div>
-          <div class="option-card" data-q="0" data-v="regional" onclick="selectOption(this)">
-            <div class="option-icon">🏨</div>
-            <div class="option-title">區域醫院</div>
-            <div class="option-desc">中型醫院，業務量中等，人力相對有限</div>
-          </div>
-          <div class="option-card" data-q="0" data-v="independent" onclick="selectOption(this)">
-            <div class="option-icon">🔬</div>
-            <div class="option-title">獨立醫檢所 / 參考實驗室</div>
-            <div class="option-desc">商業性檢驗所，強調 TAT 與效率，業務量大</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Q2: Volume -->
-      <div class="question-block" data-q="1">
-        <div class="question-step">問題 2 / 4</div>
-        <h4 class="question-text">每日染色體樣本分析量？</h4>
-        <p class="question-sub">包含羊水穿刺、絨毛取樣、骨髓血液等所有細胞遺傳樣本。</p>
-        <div class="options-grid">
-          <div class="option-card" data-q="1" data-v="low" onclick="selectOption(this)">
-            <div class="option-icon">📊</div>
-            <div class="option-title">少量</div>
-            <div class="option-desc">&lt; 20 個樣本 / 天</div>
-          </div>
-          <div class="option-card" data-q="1" data-v="medium" onclick="selectOption(this)">
-            <div class="option-icon">📈</div>
-            <div class="option-title">中量</div>
-            <div class="option-desc">20–50 個樣本 / 天</div>
-          </div>
-          <div class="option-card" data-q="1" data-v="high" onclick="selectOption(this)">
-            <div class="option-icon">🚀</div>
-            <div class="option-title">高量</div>
-            <div class="option-desc">&gt; 50 個樣本 / 天</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Q3: Primary Application -->
-      <div class="question-block" data-q="2">
-        <div class="question-step">問題 3 / 4</div>
-        <h4 class="question-text">主要業務類型？</h4>
-        <p class="question-sub">可選擇最主要的應用方向，以確認最合適的系統配置。</p>
-        <div class="options-grid">
-          <div class="option-card" data-q="2" data-v="prenatal" onclick="selectOption(this)">
-            <div class="option-icon">👶</div>
-            <div class="option-title">產前診斷</div>
-            <div class="option-desc">羊水穿刺、絨毛取樣核型分析，以 G-band 為主</div>
-          </div>
-          <div class="option-card" data-q="2" data-v="hematology" onclick="selectOption(this)">
-            <div class="option-icon">🩸</div>
-            <div class="option-title">血液腫瘤 / FISH</div>
-            <div class="option-desc">骨髓、白血病核型 + 大量 FISH 螢光訊號分析</div>
-          </div>
-          <div class="option-card" data-q="2" data-v="mixed" onclick="selectOption(this)">
-            <div class="option-icon">🔄</div>
-            <div class="option-title">混合應用</div>
-            <div class="option-desc">同時涵蓋產前診斷與血液腫瘤，需要最大靈活性</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Q4: Existing System -->
-      <div class="question-block" data-q="3">
-        <div class="question-step">問題 4 / 4</div>
         <h4 class="question-text">貴實驗室目前的設備狀況？</h4>
-        <p class="question-sub">幫助我們判斷是採購新系統或進行軟體升級。</p>
+        <p class="question-sub">這是最關鍵的分流問題——現有設備可直接進行軟體升級，無需更換硬體。</p>
         <div class="options-grid cols-2">
-          <div class="option-card" data-q="3" data-v="existing_cv" onclick="selectOption(this)">
+          <div class="option-card" data-q="0" data-v="existing_cv" onclick="selectOption(this)">
             <div class="option-icon">✅</div>
             <div class="option-title">已有 CytoVision 系統</div>
-            <div class="option-desc">正在使用 CytoVision，希望評估 AI 模組升級</div>
+            <div class="option-desc">正在使用 CytoVision，希望評估 CytoInsight AI 模組升級</div>
           </div>
-          <div class="option-card" data-q="3" data-v="new" onclick="selectOption(this)">
+          <div class="option-card" data-q="0" data-v="new" onclick="selectOption(this)">
             <div class="option-icon">🆕</div>
             <div class="option-title">全新採購</div>
-            <div class="option-desc">尚未有細胞遺傳學分析系統，或需要整套更新</div>
+            <div class="option-desc">尚未有細胞遺傳學分析系統，或需要整套汰舊換新</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2: Primary Application -->
+      <div class="question-block" data-q="1">
+        <div class="question-step">問題 2 / 4</div>
+        <h4 class="question-text">主要分析項目為何？</h4>
+        <p class="question-sub">選擇最主要的應用方向，決定所需的 AI 模組與硬體配置。</p>
+        <div class="options-grid">
+          <div class="option-card" data-q="1" data-v="prenatal" onclick="selectOption(this)">
+            <div class="option-icon">👶</div>
+            <div class="option-title">產前診斷</div>
+            <div class="option-desc">羊水穿刺、絨毛取樣核型分析，以 G-band 染色體排列為主</div>
+          </div>
+          <div class="option-card" data-q="1" data-v="hematology" onclick="selectOption(this)">
+            <div class="option-icon">🩸</div>
+            <div class="option-title">血液腫瘤 / FISH</div>
+            <div class="option-desc">骨髓、白血病核型分析 + 大量 FISH 螢光訊號計數</div>
+          </div>
+          <div class="option-card" data-q="1" data-v="mixed" onclick="selectOption(this)">
+            <div class="option-icon">🔄</div>
+            <div class="option-title">混合應用</div>
+            <div class="option-desc">同時涵蓋產前診斷與血液腫瘤，需要完整功能</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3: Daily Volume -->
+      <div class="question-block" data-q="2">
+        <div class="question-step">問題 3 / 4</div>
+        <h4 class="question-text">每日染色體樣本分析量？</h4>
+        <p class="question-sub">決定是否需要自動化上樣系統（如 GSL-120）以提升產能。</p>
+        <div class="options-grid">
+          <div class="option-card" data-q="2" data-v="low" onclick="selectOption(this)">
+            <div class="option-icon">📊</div>
+            <div class="option-title">少量</div>
+            <div class="option-desc">&lt; 10 個樣本 / 天</div>
+          </div>
+          <div class="option-card" data-q="2" data-v="medium" onclick="selectOption(this)">
+            <div class="option-icon">📈</div>
+            <div class="option-title">中量</div>
+            <div class="option-desc">10–30 個樣本 / 天</div>
+          </div>
+          <div class="option-card" data-q="2" data-v="high" onclick="selectOption(this)">
+            <div class="option-icon">🚀</div>
+            <div class="option-title">高量</div>
+            <div class="option-desc">&gt; 30 個樣本 / 天</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4: Lab Type -->
+      <div class="question-block" data-q="3">
+        <div class="question-step">問題 4 / 4</div>
+        <h4 class="question-text">您的實驗室屬性？</h4>
+        <p class="question-sub">協助我們提供最符合機構規模與需求的說明。</p>
+        <div class="options-grid">
+          <div class="option-card" data-q="3" data-v="medical_center" onclick="selectOption(this)">
+            <div class="option-icon">🏥</div>
+            <div class="option-title">醫學中心 / 大型醫院</div>
+            <div class="option-desc">病理科或細胞遺傳室，有完整醫檢師團隊</div>
+          </div>
+          <div class="option-card" data-q="3" data-v="regional" onclick="selectOption(this)">
+            <div class="option-icon">🏨</div>
+            <div class="option-title">區域醫院 / 診所</div>
+            <div class="option-desc">中型醫院或診所，人力相對有限</div>
+          </div>
+          <div class="option-card" data-q="3" data-v="independent" onclick="selectOption(this)">
+            <div class="option-icon">🔬</div>
+            <div class="option-title">獨立醫檢所 / 研究機構</div>
+            <div class="option-desc">商業性參考實驗室或學術研究單位</div>
           </div>
         </div>
       </div>
@@ -1883,93 +1883,197 @@ function showResult() {
 }
 
 function calcResult() {
-  const lab = answers[0];
-  const vol = answers[1];
-  const app = answers[2];
-  const exist = answers[3];
+  const exist = answers[0]; // existing_cv | new
+  const app   = answers[1]; // prenatal | hematology | mixed
+  const vol   = answers[2]; // low | medium | high
+  const lab   = answers[3]; // medical_center | regional | independent
 
-  // Decision logic
-  if (app === 'hematology' || (app === 'mixed' && vol === 'high')) {
+  const labNote = {
+    medical_center: '醫學中心通常需要完整的 LIMS / LIS 整合與服務合約，建議同步規劃。',
+    regional: '區域醫院可從標準配置起步，待業務量成長後再彈性擴充模組。',
+    independent: '獨立醫檢所或研究機構可依需求選擇開放性更高的研究模組組合。'
+  }[lab] || '';
+
+  // ── 結果 A：軟體升級路徑（已有 CytoVision）──
+  if (exist === 'existing_cv') {
+    const modules = {
+      prenatal:   ['CytoInsight AI 核型分析模組（Auto-Karyotyping）', 'AI 智能品質篩選模組'],
+      hematology: ['CytoInsight AI FISH 訊號計數模組', 'AI 智能品質篩選模組'],
+      mixed:      ['CytoInsight AI 核型分析模組（Auto-Karyotyping）', 'CytoInsight AI FISH 訊號計數模組', 'AI 智能品質篩選模組']
+    }[app] || ['CytoInsight AI 完整模組'];
     return {
-      icon: '🩸',
-      title: 'CytoVision DM6 B + CytoInsight AI + VERSA',
-      subtitle: '血液腫瘤 / FISH 高通量配置',
+      icon: '⬆️',
+      title: 'CytoInsight AI 軟體升級',
+      subtitle: '現有 CytoVision 系統直接升級，無需更換硬體',
       config: [
-        'CytoVision DM6 B — 螢光顯微鏡系統',
-        'CytoInsight AI 模組（AI 核型 + AI FISH 計數）',
-        'Aperio VERSA — 多色螢光掃描儀（可選）',
-        exist === 'existing_cv' ? 'CytoInsight AI 軟體升級授權' : '全套新系統安裝部署'
+        '現有 CytoVision 系統（保留）',
+        ...modules,
+        '版本相容性確認 + 軟體授權部署',
+        'LIMS / LIS 整合設定（視需求）'
       ],
       benefits: [
-        'AI FISH 多色訊號自動計數，降低視覺疲勞',
-        '複雜異常核型 AI 提供初稿，醫檢師專注判讀',
-        '批次統計報告自動產出',
-        'VERSA 支援 63x 油鏡螢光，研究 / 臨床兩用'
+        '無需採購新硬體，大幅降低導入成本',
+        '導入週期短，不影響現有工作流程',
+        '依實際需要選配所需 AI 模組',
+        '未來可隨平台更新持續擴充功能'
       ],
-      pitch: '貴實驗室 FISH 分析量大，人眼長時間判讀螢光訊號是最大的效率瓶頸。CytoInsight AI FISH 計數模組可以在數秒內完成每個細胞的多色訊號計數，不只提升速度，更能降低因視覺疲勞導致的漏計風險——在血液腫瘤診斷中，每一個訊號都至關重要。'
+      pitch: '您已擁有 CytoVision 平台，導入 CytoInsight AI 最直接的路徑就是軟體授權升級。' + (app === 'prenatal' ? '核型分析模組可讓原本每個核型需 20 分鐘的手動排列，縮短至 3–5 分鐘，立即釋放人力。' : app === 'hematology' ? 'FISH AI 計數模組可自動完成多色螢光訊號計數，顯著降低視覺疲勞與人為漏計風險。' : '完整 AI 套件同時提升核型排列與 FISH 計數效率，是全方位升級的最佳路徑。') + (labNote ? ' ' + labNote : '')
     };
   }
 
-  if (app === 'prenatal' && vol === 'high') {
+  // ── 新採購路徑 ──
+
+  // 結果 B：產前診斷 × 少量（手動輕量配置）
+  if (app === 'prenatal' && vol === 'low') {
+    return {
+      icon: '👶',
+      title: 'CytoVision + CytoInsight AI 核型模組',
+      subtitle: '產前診斷輕量配置 — 適合每日 < 10 個樣本',
+      config: [
+        'CytoVision 影像擷取系統（手動上樣）',
+        'CytoInsight AI 核型分析模組（Auto-Karyotyping）',
+        'AI 智能品質篩選模組',
+        '系統安裝 + 使用者培訓'
+      ],
+      benefits: [
+        '入門級配置，投資門檻低',
+        'AI 自動核型讓新人快速上手',
+        '手動上樣靈活，適合少量多樣的樣本類型',
+        '未來可隨業務成長升級至自動上樣系統'
+      ],
+      pitch: '對於每日樣本量較少的產前診斷室，不需要高成本的自動上樣設備。CytoInsight AI 核型模組可以直接加速最耗時的染色體排列步驟，讓您以較低的投入獲得立即的效率改善。' + (labNote ? ' ' + labNote : '')
+    };
+  }
+
+  // 結果 C：產前診斷 × 中量（標準配置）
+  if (app === 'prenatal' && vol === 'medium') {
     return {
       icon: '🏥',
-      title: 'CytoVision GSL-120 + CytoInsight AI（高通量配置）',
-      subtitle: '產前診斷高業務量旗艦配置',
+      title: 'CytoVision + CytoInsight AI 核型模組（標準版）',
+      subtitle: '產前診斷標準配置 — 適合每日 10–30 個樣本',
       config: [
-        'CytoVision GSL-120 — 高通量 120 片自動掃描系統',
-        'CytoInsight AI 模組（AI 自動核型 + 智能品質篩選）',
-        exist === 'existing_cv' ? 'CytoInsight AI 軟體升級授權（確認版本相容性）' : '全套新系統安裝部署',
+        'CytoVision 影像擷取系統',
+        'CytoInsight AI 核型分析模組（Auto-Karyotyping）',
+        'AI 智能品質篩選模組',
         'LIMS / LIS 整合設定'
       ],
       benefits: [
-        'GSL-120 自動上樣，每日可處理大量標本',
-        'AI 自動核型讓正常案例幾乎免人工排列',
-        '智能品質篩選優先呈現最佳分裂相',
-        '顯著改善 TAT，提升競爭力'
+        '正常核型自動完成率 > 90%，大幅縮短 TAT',
+        'AI 品質篩選優先呈現最佳分裂相，節省翻閱時間',
+        '新人上手時間縮短，人力培育成本降低',
+        '可彈性擴充 FISH 模組應對混合業務需求'
       ],
-      pitch: '以每日超過 20 個產前樣本的業務量來說，TAT 的壓力相當大。CytoInsight AI 配合 GSL-120 自動掃描，可以讓正常核型幾乎全自動完成，醫檢師只需要做最後審查——這不只是效率提升，更是在同樣人力下承接更多業務的關鍵能力。'
+      pitch: '每日 10–30 個產前樣本的業務量，是人力與效率壓力最明顯的區段。CytoInsight AI 可以讓正常核型幾乎全自動完成初稿，醫檢師只需審查異常案例——同樣的人力，可以穩定支撐業務量繼續成長。' + (labNote ? ' ' + labNote : '')
     };
   }
 
-  if (vol === 'low' || lab === 'regional') {
+  // 結果 D：產前診斷 × 高量（GSL-120 高通量）
+  if (app === 'prenatal' && vol === 'high') {
     return {
-      icon: '🏨',
-      title: 'CytoVision GSL-120 + CytoInsight AI（標準配置）',
-      subtitle: '中型實驗室最佳性價比配置',
+      icon: '🚀',
+      title: 'CytoVision GSL-120 + CytoInsight AI 核型模組',
+      subtitle: '產前診斷高通量旗艦配置 — 適合每日 > 30 個樣本',
       config: [
-        'CytoVision 系統（依現有或新採購確認型號）',
-        'CytoInsight AI 模組（AI 自動核型 + 智能品質篩選）',
-        exist === 'existing_cv' ? 'CytoInsight AI 軟體升級授權' : '完整系統採購',
-        '基礎 FISH 分析（視需求加選 AI FISH 模組）'
+        'CytoVision GSL-120 — 120 片自動上樣掃描系統',
+        'CytoInsight AI 核型分析模組（Auto-Karyotyping）',
+        'AI 智能品質篩選模組',
+        'LIMS / LIS 整合 + 完整服務合約'
       ],
       benefits: [
-        '以軟體升級方式導入，降低初期投資門檻',
-        'AI 協助新人快速上手，縮短培訓週期',
-        '現有人力可服務更多樣本量',
-        '未來可依業務成長逐步擴充模組'
+        'GSL-120 自動上樣，批次掃描無需人工換片',
+        'AI 核型 + 自動掃描串接，大幅縮短全流程 TAT',
+        '夜間自動掃描，隔日即可開始判讀',
+        '高樣本量下人力效益最大化'
       ],
-      pitch: '對於業務量穩定成長的實驗室，CytoInsight AI 最大的價值在於「人力槓桿」——同樣的人力，可以做更多的檢體，或者讓現有人員從繁瑣排列中解放出來，專注在更高價值的複雜案例判讀。而且如果您已有 CytoVision，可以直接軟體升級，投資相當有效率。'
+      pitch: '每日超過 30 個產前樣本，手動換片與等待掃描已成為瓶頸。GSL-120 自動上樣系統搭配 CytoInsight AI，可讓掃描與 AI 核型初稿在夜間自動完成，醫檢師隔日直接進行審查判讀——這是高業務量實驗室實現 TAT 突破的關鍵配置。' + (labNote ? ' ' + labNote : '')
     };
   }
 
-  // Default: large medical center
+  // 結果 E：血液腫瘤 × 少量或中量（DM6 B 標準 FISH 配置）
+  if (app === 'hematology' && (vol === 'low' || vol === 'medium')) {
+    return {
+      icon: '🩸',
+      title: 'CytoVision DM6 B + CytoInsight AI FISH 模組',
+      subtitle: '血液腫瘤 FISH 標準配置 — 適合每日 < 30 個樣本',
+      config: [
+        'CytoVision DM6 B — 多色螢光顯微鏡系統',
+        'CytoInsight AI FISH 訊號計數模組',
+        'AI 智能品質篩選模組',
+        '系統安裝 + 使用者培訓'
+      ],
+      benefits: [
+        'DM6 B 支援多色螢光，完整覆蓋 FISH 檢測需求',
+        'AI 自動計數紅 / 綠 / 橘等多色訊號，降低視覺疲勞',
+        '異常訊號數量自動標記，醫檢師快速定位問題細胞',
+        '批次分析報告自動產出，減少手動記錄工作'
+      ],
+      pitch: 'FISH 螢光訊號判讀需要長時間盯著螢幕計數，是血液腫瘤實驗室最容易發生視覺疲勞與人為誤差的步驟。CytoInsight AI FISH 模組在數秒內自動完成每個細胞的多色訊號計數，讓醫檢師從重複性計數中解放，專注於結果解讀與報告撰寫。' + (labNote ? ' ' + labNote : '')
+    };
+  }
+
+  // 結果 F：血液腫瘤 × 高量（DM6 B + VERSA 高通量 FISH 配置）
+  if (app === 'hematology' && vol === 'high') {
+    return {
+      icon: '🔬',
+      title: 'CytoVision DM6 B + CytoInsight AI + Aperio VERSA',
+      subtitle: '血液腫瘤高通量 FISH 配置 — 適合每日 > 30 個樣本',
+      config: [
+        'CytoVision DM6 B — 多色螢光顯微鏡系統',
+        'CytoInsight AI FISH 訊號計數模組',
+        'Aperio VERSA — 多色螢光全玻片掃描儀',
+        'LIMS / LIS 整合 + 完整服務合約'
+      ],
+      benefits: [
+        'VERSA 全玻片掃描支援 63x 油鏡，高解析螢光影像',
+        'AI 批次 FISH 計數，每日處理大量樣本不積累',
+        '掃描影像永久存檔，遠端判讀與會診更便利',
+        '臨床與研究模式兼備，兼顧日常診斷與學術研究'
+      ],
+      pitch: '高業務量的血液腫瘤實驗室，FISH 樣本積壓是常見困境。Aperio VERSA 可批次全玻片掃描螢光影像，搭配 CytoInsight AI 批次計數，讓判讀工作從顯微鏡旁移至電腦螢幕，支援多人同時判讀，徹底解決產能瓶頸。' + (labNote ? ' ' + labNote : '')
+    };
+  }
+
+  // 結果 G：混合應用 × 少量或中量（完整模組標準配置）
+  if (app === 'mixed' && (vol === 'low' || vol === 'medium')) {
+    return {
+      icon: '🔄',
+      title: 'CytoVision + CytoInsight AI 完整模組',
+      subtitle: '混合應用標準配置 — 核型分析 + FISH 計數全涵蓋',
+      config: [
+        'CytoVision 影像擷取系統',
+        'CytoInsight AI 核型分析模組（Auto-Karyotyping）',
+        'CytoInsight AI FISH 訊號計數模組',
+        'AI 智能品質篩選模組'
+      ],
+      benefits: [
+        '單一平台同時支援 G-band 核型與多色 FISH 分析',
+        'AI 核型大幅縮短產前診斷 TAT',
+        'AI FISH 計數降低血液腫瘤判讀的視覺疲勞',
+        '模組化設計，可依需求靈活調整使用比重'
+      ],
+      pitch: '同時承接產前診斷與血液腫瘤業務的實驗室，最需要的是一個能切換應用場景的靈活平台。CytoVision 搭配完整 CytoInsight AI 模組，讓您在同一套系統內處理 G-band 核型與多色 FISH，不需要分別維護兩套設備。' + (labNote ? ' ' + labNote : '')
+    };
+  }
+
+  // 結果 H：混合應用 × 高量（GSL-120 + 完整模組高通量配置）
   return {
-    icon: '🧬',
-    title: 'CytoVision GSL-120 + CytoInsight AI（完整版）',
-    subtitle: '醫學中心全功能配置',
+    icon: '🏆',
+    title: 'CytoVision GSL-120 + CytoInsight AI 完整模組',
+    subtitle: '混合應用高通量旗艦配置 — 最高效能全功能組合',
     config: [
-      'CytoVision GSL-120 — 高通量自動掃描系統',
-      'CytoInsight AI 完整模組（核型 + FISH + 品質篩選）',
-      exist === 'existing_cv' ? 'AI 軟體升級授權（建議確認當前版本）' : '全套系統部署 + 安裝培訓',
+      'CytoVision GSL-120 — 120 片自動上樣掃描系統',
+      'CytoInsight AI 核型分析模組（Auto-Karyotyping）',
+      'CytoInsight AI FISH 訊號計數模組',
+      'AI 智能品質篩選模組',
       'LIMS / LIS 整合 + 完整服務合約'
     ],
     benefits: [
-      'AI 自動核型讓新人也能快速勝任，緩解人才壓力',
-      '每日節省數小時人力工時，TAT 大幅改善',
-      '複雜案例由 AI 提供初稿，資深醫檢師集中審查',
-      '完整服務合約確保系統長期穩定運行'
+      'GSL-120 自動上樣 × AI 核型，產前診斷全自動化',
+      'AI FISH 批次計數，血液腫瘤業務同步不積壓',
+      '兩種業務共用一套平台，維護成本最低',
+      '夜間自動掃描，隔日即可開始全天判讀'
     ],
-    pitch: '醫學中心面對的挑戰是：業務量大、人才難留、TAT 要求嚴格。CytoInsight AI 能同時解決這三個問題——AI 降低對資深醫檢師的依賴、提升 4 倍效率改善 TAT，也讓科室在相同人力下具備更強的承接能力。這不只是設備投資，更是科室競爭力的全面升級。'
+    pitch: '每日超過 30 個混合業務樣本，同時需要兼顧核型分析與 FISH 計數，是對實驗室效率要求最高的場景。GSL-120 自動上樣搭配 CytoInsight AI 完整模組，讓兩種分析路徑都達到最高自動化水準，是大型醫學中心與高業務量醫檢所的首選旗艦配置。' + (labNote ? ' ' + labNote : '')
   };
 }
 
