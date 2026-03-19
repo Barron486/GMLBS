@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leica CytoInsight AI — 智能細胞遺傳學分析</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c12;
+    --bg2: #0d1420;
+    --bg3: #121b2a;
+    --teal: #00d4a8;
+    --teal-dim: #00a882;
+    --gold: #c9a84c;
+    --gold-dim: #9a7a30;
+    --white: #f0f6ff;
+    --muted: #6b7fa3;
+    --border: rgba(0,212,168,0.15);
+    --red: #ff4d6d;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,168,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,168,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(8,12,18,0.95), transparent);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--teal); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    overflow: hidden;
+  }
+
+  /* Chromosome orb */
+  .hero-orb {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%,
+      rgba(0,212,168,0.12) 0%,
+      rgba(0,168,130,0.06) 40%,
+      transparent 70%);
+    border: 1px solid rgba(0,212,168,0.08);
+    animation: orbPulse 6s ease-in-out infinite;
+  }
+
+  .hero-orb::before {
+    content: '';
+    position: absolute;
+    inset: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,212,168,0.12);
+    animation: orbPulse 6s ease-in-out infinite 1s;
+  }
+
+  .hero-orb::after {
+    content: '';
+    position: absolute;
+    inset: 100px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.15);
+    animation: orbPulse 6s ease-in-out infinite 2s;
+  }
+
+  /* Floating chromosome shapes */
+  .chrom {
+    position: absolute;
+    border-radius: 40% 60% 60% 40% / 50%;
+    opacity: 0.06;
+    animation: chromFloat 8s ease-in-out infinite;
+  }
+
+  .chrom-1 { width: 12px; height: 60px; background: var(--teal); right: 200px; top: 30%; animation-delay: 0s; }
+  .chrom-2 { width: 10px; height: 45px; background: var(--gold); right: 250px; top: 45%; animation-delay: 1.5s; }
+  .chrom-3 { width: 14px; height: 70px; background: var(--teal); right: 170px; top: 55%; animation-delay: 3s; }
+  .chrom-4 { width: 8px; height: 40px; background: var(--white); right: 300px; top: 35%; animation-delay: 4.5s; }
+  .chrom-5 { width: 11px; height: 55px; background: var(--teal); right: 140px; top: 40%; animation-delay: 2s; }
+
+  @keyframes orbPulse {
+    0%, 100% { transform: translateY(-50%) scale(1); opacity: 1; }
+    50% { transform: translateY(-50%) scale(1.04); opacity: 0.8; }
+  }
+
+  @keyframes chromFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--teal);
+  }
+
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-subtitle {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(240,246,255,0.65);
+    margin-bottom: 48px;
+    max-width: 520px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .stat-item { text-align: left; }
+
+  .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--teal);
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .stat-num .unit {
+    font-size: 18px;
+    color: var(--gold);
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 6px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 48px;
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--teal);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: rgba(240,246,255,0.55);
+    line-height: 1.8;
+    max-width: 560px;
+    margin-bottom: 60px;
+  }
+
+  /* ── ARCHITECTURE ── */
+  .arch-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .arch-diagram {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .arch-diagram::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  }
+
+  .arch-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .arch-box {
+    padding: 16px 24px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .arch-box:hover {
+    border-color: var(--teal);
+    background: rgba(0,212,168,0.04);
+  }
+
+  .arch-box.base { background: rgba(255,255,255,0.03); }
+
+  .arch-box.ai-module {
+    background: linear-gradient(135deg, rgba(0,212,168,0.08), rgba(201,168,76,0.05));
+    border-color: rgba(0,212,168,0.3);
+    margin-top: -1px;
+  }
+
+  .arch-box-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .arch-box-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .arch-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .arch-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(0,212,168,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(0,212,168,0.2);
+  }
+
+  .arch-tag.gold {
+    background: rgba(201,168,76,0.1);
+    color: var(--gold);
+    border-color: rgba(201,168,76,0.2);
+  }
+
+  .arch-connector {
+    display: flex;
+    align-items: center;
+    padding: 6px 0 6px 24px;
+    color: var(--muted);
+    font-size: 18px;
+  }
+
+  /* ── AI FEATURES ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .feature-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+    cursor: default;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+
+  .feature-card:hover::before { transform: scaleX(1); }
+
+  .feature-card:hover {
+    border-color: rgba(0,212,168,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,212,168,0.08);
+  }
+
+  .feature-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    background: rgba(0,212,168,0.08);
+    border: 1px solid rgba(0,212,168,0.15);
+  }
+
+  .feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(240,246,255,0.55);
+    margin-bottom: 20px;
+  }
+
+  .feature-metrics {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .metric {
+    flex: 1;
+  }
+
+  .metric-val {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 22px;
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  .metric-key {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ── WORKFLOW ── */
+  .workflow-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .workflow-compare {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .workflow-col { }
+
+  .workflow-col-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 32px;
+  }
+
+  .workflow-col-label.before {
+    background: rgba(255,255,255,0.05);
+    color: var(--muted);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .workflow-col-label.after {
+    background: rgba(0,212,168,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(0,212,168,0.25);
+  }
+
+  .workflow-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-dot.highlight {
+    background: rgba(0,212,168,0.1);
+    border-color: rgba(0,212,168,0.4);
+    color: var(--teal);
+  }
+
+  .step-dot.ai-dot {
+    background: linear-gradient(135deg, rgba(0,212,168,0.2), rgba(201,168,76,0.1));
+    border-color: var(--teal);
+    color: var(--teal);
+    font-size: 14px;
+  }
+
+  .step-body {}
+
+  .step-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .step-name.pain {
+    color: rgba(255,77,109,0.8);
+  }
+
+  .step-time {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .step-time.fast { color: var(--teal); }
+
+  .workflow-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 48px;
+    gap: 12px;
+  }
+
+  .vs-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--teal);
+  }
+
+  .workflow-arrow {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--teal), transparent);
+  }
+
+  .time-save {
+    background: linear-gradient(135deg, rgba(0,212,168,0.1), rgba(201,168,76,0.05));
+    border: 1px solid rgba(0,212,168,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .time-save-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 36px;
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  .time-save-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── CONFIGURATOR ── */
+  .configurator-section { }
+
+  .config-container {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .config-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+  }
+
+  .config-header {
+    padding: 40px 48px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .config-header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .config-progress {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+
+  .progress-dot.active {
+    background: var(--teal);
+    width: 24px;
+    border-radius: 4px;
+  }
+
+  .progress-dot.done {
+    background: var(--teal-dim);
+  }
+
+  .config-body {
+    padding: 48px;
+  }
+
+  .question-block {
+    display: none;
+  }
+
+  .question-block.active {
+    display: block;
+    animation: fadeUp 0.4s ease;
+  }
+
+  .question-step {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .question-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .question-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .options-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .option-card {
+    background: var(--bg3);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 24px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .option-card:hover {
+    border-color: rgba(0,212,168,0.4);
+    background: rgba(0,212,168,0.05);
+  }
+
+  .option-card.selected {
+    border-color: var(--teal);
+    background: rgba(0,212,168,0.08);
+  }
+
+  .option-card.selected::before {
+    content: '✓';
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--bg);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .option-icon { font-size: 28px; margin-bottom: 12px; }
+
+  .option-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .option-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .config-footer {
+    padding: 0 48px 48px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .btn {
+    padding: 14px 32px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: var(--bg);
+  }
+
+  .btn-primary:hover {
+    background: #00efc0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,212,168,0.3);
+  }
+
+  .btn-primary:disabled {
+    background: rgba(0,212,168,0.2);
+    color: var(--muted);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .btn-secondary:hover {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.25);
+  }
+
+  /* Result Panel */
+  .result-panel {
+    display: none;
+    padding: 48px;
+    animation: fadeUp 0.5s ease;
+  }
+
+  .result-panel.show {
+    display: block;
+  }
+
+  .result-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .result-badge {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(0,212,168,0.2), rgba(201,168,76,0.1));
+    border: 1px solid rgba(0,212,168,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  .result-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .result-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .result-box {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+  }
+
+  .result-box-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .result-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .result-items li {
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    color: rgba(240,246,255,0.75);
+    line-height: 1.5;
+  }
+
+  .result-items li::before {
+    content: '→';
+    color: var(--teal);
+    flex-shrink: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 1px;
+  }
+
+  .result-pitch {
+    background: linear-gradient(135deg, rgba(0,212,168,0.06), rgba(201,168,76,0.03));
+    border: 1px solid rgba(0,212,168,0.15);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 28px;
+  }
+
+  .result-pitch-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .result-pitch p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(240,246,255,0.75);
+    font-style: italic;
+  }
+
+  .result-actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .compare-table th {
+    padding: 20px 24px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-table th.leica {
+    color: var(--teal);
+    background: rgba(0,212,168,0.05);
+  }
+
+  .compare-table td {
+    padding: 18px 24px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: rgba(240,246,255,0.7);
+    vertical-align: middle;
+  }
+
+  .compare-table td.leica {
+    background: rgba(0,212,168,0.03);
+    color: var(--white);
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .compare-table tr:hover td.leica { background: rgba(0,212,168,0.06); }
+
+  .check { color: var(--teal); font-size: 16px; }
+  .warn { color: var(--gold); font-size: 14px; }
+  .cross { color: rgba(255,77,109,0.6); font-size: 16px; }
+
+  .leica-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,212,168,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(0,212,168,0.25);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── SALES PERSONAS ── */
+  .personas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .persona-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .persona-card:hover {
+    border-color: rgba(0,212,168,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .persona-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .persona-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(0,212,168,0.08);
+    border: 1px solid rgba(0,212,168,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .persona-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .persona-role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+  }
+
+  .persona-body {
+    padding: 24px 28px;
+  }
+
+  .persona-pain {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .persona-concern {
+    font-size: 13px;
+    color: rgba(240,246,255,0.5);
+    font-style: italic;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid rgba(255,255,255,0.1);
+    border-radius: 0 8px 8px 0;
+    line-height: 1.7;
+  }
+
+  .persona-script {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .persona-pitch {
+    font-size: 13px;
+    color: rgba(240,246,255,0.65);
+    line-height: 1.8;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 48px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ── REVEAL ANIMATION ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: rgba(0,212,168,0.2); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(0,212,168,0.4); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 60px 24px; }
+    .arch-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .workflow-compare { grid-template-columns: 1fr; }
+    .workflow-divider { flex-direction: row; padding: 20px 0; }
+    .options-grid { grid-template-columns: 1fr 1fr; }
+    .personas-grid { grid-template-columns: 1fr; }
+    .result-grid { grid-template-columns: 1fr; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-orb { display: none; }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Leica Biosystems / CytoInsight AI</div>
+  <ul class="nav-links">
+    <li><a href="#features">AI 功能</a></li>
+    <li><a href="#workflow">工作流程</a></li>
+    <li><a href="#configurator">配置選擇</a></li>
+    <li><a href="#compare">比較</a></li>
+    <li><a href="#personas">銷售話術</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb">
+    <div class="chrom chrom-1"></div>
+    <div class="chrom chrom-2"></div>
+    <div class="chrom chrom-3"></div>
+    <div class="chrom chrom-4"></div>
+    <div class="chrom chrom-5"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">深度學習 AI 細胞遺傳學分析</p>
+    <h1 class="hero-title">
+      <em>CytoInsight</em><br>
+      <span class="gold">AI</span> 讓染色體<br>排列不再耗時
+    </h1>
+    <p class="hero-subtitle">
+      CytoVision 平台的 AI 智能升級模組，以深度學習自動完成核型製作，
+      將每個核型的分析時間從 20 分鐘縮短至 3–5 分鐘。
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">4<span class="unit">×</span></div>
+        <div class="stat-label">效率提升</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">90<span class="unit">%+</span></div>
+        <div class="stat-label">正常核型自動完成率</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3<span class="unit">分鐘</span></div>
+        <div class="stat-label">每個核型平均耗時</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="arch-section" id="architecture">
+  <div class="section-label">產品定位</div>
+  <h2 class="section-title reveal">CytoInsight 在 CytoVision 平台中的位置</h2>
+  <p class="section-desc reveal">CytoInsight 並非獨立硬體，而是 CytoVision 的 AI 軟體升級模組，採用「人機協作」設計哲學。</p>
+
+  <div class="arch-grid reveal">
+    <div class="arch-diagram">
+      <div class="arch-row">
+        <div class="arch-box base">
+          <div class="arch-box-label">基礎平台</div>
+          <div class="arch-box-title">CytoVision 核心功能</div>
+          <div class="arch-features">
+            <span class="arch-tag">Metaphase Finding</span>
+            <span class="arch-tag">高解析度影像擷取</span>
+            <span class="arch-tag">手動排列介面</span>
+            <span class="arch-tag">LIMS / LIS 整合</span>
+          </div>
+        </div>
+        <div class="arch-connector">↕</div>
+        <div class="arch-box ai-module">
+          <div class="arch-box-label">AI 升級模組</div>
+          <div class="arch-box-title">CytoInsight AI 功能</div>
+          <div class="arch-features">
+            <span class="arch-tag gold">AI 自動核型分析</span>
+            <span class="arch-tag gold">深度學習染色體分類</span>
+            <span class="arch-tag gold">AI FISH 自動計數</span>
+            <span class="arch-tag gold">智能品質篩選</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="margin-bottom: 32px;">
+        <h3 style="font-family:'Playfair Display',serif; font-size: 22px; margin-bottom: 12px; font-weight: 700;">人機協作設計哲學</h3>
+        <p style="font-size: 14px; line-height: 1.9; color: rgba(240,246,255,0.6);">
+          AI 負責完成最耗時的初步排列工作——染色體辨識、分類、配對、按 ISCN 排列——而醫檢師則專注於最終的審查與複雜異常判讀。既大幅提升效率，又保留人類專業判斷，確保報告品質。
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); margin-top: 6px; flex-shrink: 0;"></div>
+          <div>
+            <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">現有用戶可軟體升級</div>
+            <div style="font-size: 12px; color: var(--muted); line-height: 1.6;">已有 CytoVision 的客戶通常無需更換硬體，透過軟體授權即可導入 CytoInsight AI。</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 6px; flex-shrink: 0;"></div>
+          <div>
+            <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">單一介面完成全流程</div>
+            <div style="font-size: 12px; color: var(--muted); line-height: 1.6;">從影像擷取、AI 分析、人工審查到報告輸出，全在 CytoVision 一個介面完成。</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); margin-top: 6px; flex-shrink: 0;"></div>
+          <div>
+            <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">模型持續自我優化</div>
+            <div style="font-size: 12px; color: var(--muted); line-height: 1.6;">醫檢師的修正記錄可用來持續回饋優化 AI 模型精準度。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI FEATURES -->
+<section id="features">
+  <div class="section-label">核心功能</div>
+  <h2 class="section-title reveal">四大 AI 模組</h2>
+  <p class="section-desc reveal">從染色體自動排列到 FISH 訊號計數，CytoInsight 涵蓋細胞遺傳學實驗室最核心的 AI 自動化需求。</p>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-num">01 / AUTO-KARYOTYPING</div>
+      <div class="feature-icon">🧬</div>
+      <h3 class="feature-title">AI 自動核型分析</h3>
+      <p class="feature-desc">
+        AI 在數秒內自動完成染色體分割、條帶模式辨識（G-band / R-band）、同源染色體配對，並按 ISCN 國際標準自動排列成完整核型圖。醫檢師僅需審查並微調少數辨識錯誤，大幅降低重複性作業負擔。
+      </p>
+      <div class="feature-metrics">
+        <div class="metric">
+          <div class="metric-val">15–30</div>
+          <div class="metric-key">傳統流程（分鐘）</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val" style="color:var(--teal);">3–5</div>
+          <div class="metric-key">AI 輔助後（分鐘）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card reveal">
+      <div class="feature-num">02 / DEEP LEARNING CLASSIFICATION</div>
+      <div class="feature-icon">🤖</div>
+      <h3 class="feature-title">深度學習染色體分類</h3>
+      <p class="feature-desc">
+        卷積神經網路（CNN）模型訓練自數萬條已標註染色體，依長度、著絲點位置（Centromere Index）及 G-band 條帶模式進行精準分類。遇染色體重疊、扭轉或品質不佳時，AI 主動標記供醫檢師優先審查。
+      </p>
+      <div class="feature-metrics">
+        <div class="metric">
+          <div class="metric-val">&gt;90%</div>
+          <div class="metric-key">正常核型自動完成率</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">CNN</div>
+          <div class="metric-key">深度學習架構</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card reveal">
+      <div class="feature-num">03 / FISH SIGNAL ANALYSIS</div>
+      <div class="feature-icon">🔬</div>
+      <h3 class="feature-title">AI 輔助 FISH 訊號計數</h3>
+      <p class="feature-desc">
+        自動偵測並依顏色（紅 / 綠 / 橘 / 金色）分別計數細胞核內的螢光訊號斑點，批次分析多個細胞並產出統計摘要報告。自動標記訊號數量異常細胞（基因擴增或缺失），大幅降低視覺疲勞。
+      </p>
+      <div class="feature-metrics">
+        <div class="metric">
+          <div class="metric-val">4+</div>
+          <div class="metric-key">螢光色彩同步計數</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">批次</div>
+          <div class="metric-key">多細胞自動分析</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card reveal">
+      <div class="feature-num">04 / QUALITY INTELLIGENCE</div>
+      <div class="feature-icon">⭐</div>
+      <h3 class="feature-title">智能品質篩選</h3>
+      <p class="feature-desc">
+        在 Metaphase Finding 基礎上加入 AI 品質評分機制，依染色體分散程度、重疊狀況、條帶清晰度給予品質分數，自動將品質最佳的分裂相優先呈現。支援設定品質閾值，低於標準者自動跳過。
+      </p>
+      <div class="feature-metrics">
+        <div class="metric">
+          <div class="metric-val">自動</div>
+          <div class="metric-key">品質評分排序</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">閾值</div>
+          <div class="metric-key">可自訂篩選標準</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="workflow-section" id="workflow">
+  <div class="section-label">效率對比</div>
+  <h2 class="section-title reveal">導入前後工作流程比較</h2>
+  <p class="section-desc reveal">相同的分析任務，AI 讓流程從繁瑣的手動作業轉型為高效的人機協作。</p>
+
+  <div class="workflow-compare reveal">
+    <!-- BEFORE -->
+    <div class="workflow-col">
+      <div class="workflow-col-label before">傳統流程（無 AI）</div>
+
+      <div class="workflow-step">
+        <div class="step-dot">1</div>
+        <div class="step-body">
+          <div class="step-name">掃描分裂相影像</div>
+          <div class="step-time">~5 min</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-dot">2</div>
+        <div class="step-body">
+          <div class="step-name">顯微鏡下確認品質 / 手動翻閱</div>
+          <div class="step-time">~3 min</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-dot highlight">3</div>
+        <div class="step-body">
+          <div class="step-name pain">手動逐一辨識 46 條染色體</div>
+          <div class="step-time" style="color: rgba(255,77,109,0.7);">~10–15 min ← 最耗時步驟</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-dot highlight">4</div>
+        <div class="step-body">
+          <div class="step-name pain">拖拉排列、配對（1-22 + XY）</div>
+          <div class="step-time" style="color: rgba(255,77,109,0.7);">~5–10 min</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-dot">5</div>
+        <div class="step-body">
+          <div class="step-name">核型圖完成 → 發報告</div>
+          <div class="step-time">~2 min</div>
+        </div>
+      </div>
+
+      <div class="time-save" style="background: rgba(255,77,109,0.05); border-color: rgba(255,77,109,0.2);">
+        <div class="time-save-num" style="color: rgba(255,77,109,0.8);">15–30</div>
+        <div class="time-save-label">分鐘 / 每個核型</div>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="workflow-divider">
+      <div class="workflow-arrow"></div>
+      <div class="vs-badge">AI</div>
+      <div class="workflow-arrow"></div>
+    </div>
+
+    <!-- AFTER -->
+    <div class="workflow-col">
+      <div class="workflow-col-label after">AI 輔助流程</div>
+
+      <div class="workflow-step">
+        <div class="step-dot">1</div>
+        <div class="step-body">
+          <div class="step-name">掃描分裂相（AI 同步評分品質）</div>
+          <div class="step-time fast">~3 min</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-dot ai-dot">✦</div>
+        <div class="step-body">
+          <div class="step-name" style="color: var(--teal);">AI 自動完成：辨識 → 分類 → 配對 → 排列</div>
+          <div class="step-time fast">數秒內完成</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-dot">3</div>
+        <div class="step-body">
+          <div class="step-name">醫檢師審查 AI 初稿（確認 / 微調）</div>
+          <div class="step-time fast">~1–2 min</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-dot">4</div>
+        <div class="step-body">
+          <div class="step-name">核型圖完成 → 發報告</div>
+          <div class="step-time fast">~1 min</div>
+        </div>
+      </div>
+
+      <div class="time-save">
+        <div class="time-save-num">3–5</div>
+        <div class="time-save-label">分鐘 / 每個核型（效率提升 4–6×）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROI BANNER -->
+  <div style="margin-top: 48px; background: linear-gradient(135deg, rgba(0,212,168,0.06), rgba(201,168,76,0.04)); border: 1px solid rgba(0,212,168,0.15); border-radius: 16px; padding: 32px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;" class="reveal">
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px;">每日 20 個樣本計算</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 32px; color: var(--teal);">5 hr</div>
+      <div style="font-size: 13px; color: rgba(240,246,255,0.6); margin-top: 4px;">每日節省的人力工時</div>
+    </div>
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px;">TAT 改善</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 32px; color: var(--gold);">70–80%</div>
+      <div style="font-size: 13px; color: rgba(240,246,255,0.6); margin-top: 4px;">核型製作時間縮短</div>
+    </div>
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px;">投資回收期</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 32px; color: var(--teal);">2–3 年</div>
+      <div style="font-size: 13px; color: rgba(240,246,255,0.6); margin-top: 4px;">人力成本節省回收設備投資</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIGURATOR -->
+<section id="configurator">
+  <div class="section-label">配置選擇精靈</div>
+  <h2 class="section-title reveal">找到最適合您的配置</h2>
+  <p class="section-desc reveal">回答 4 個問題，快速找到最符合貴實驗室需求的 CytoVision + CytoInsight AI 配置建議。</p>
+
+  <div class="config-container reveal">
+    <div class="config-header">
+      <h3 class="config-header-title">配置選擇精靈</h3>
+      <div class="config-progress" id="progressDots">
+        <div class="progress-dot active" id="dot0"></div>
+        <div class="progress-dot" id="dot1"></div>
+        <div class="progress-dot" id="dot2"></div>
+        <div class="progress-dot" id="dot3"></div>
+      </div>
+    </div>
+
+    <!-- Q1: Lab Type -->
+    <div class="config-body" id="configBody">
+      <div class="question-block active" data-q="0">
+        <div class="question-step">問題 1 / 4</div>
+        <h4 class="question-text">您的實驗室類型是？</h4>
+        <p class="question-sub">選擇最符合貴機構的定位，以獲得精準的配置建議。</p>
+        <div class="options-grid">
+          <div class="option-card" data-q="0" data-v="medical_center" onclick="selectOption(this)">
+            <div class="option-icon">🏥</div>
+            <div class="option-title">醫學中心 / 大型醫院</div>
+            <div class="option-desc">病理科、細胞遺傳室，高業務量，有完整醫檢師團隊</div>
+          </div>
+          <div class="option-card" data-q="0" data-v="regional" onclick="selectOption(this)">
+            <div class="option-icon">🏨</div>
+            <div class="option-title">區域醫院</div>
+            <div class="option-desc">中型醫院，業務量中等，人力相對有限</div>
+          </div>
+          <div class="option-card" data-q="0" data-v="independent" onclick="selectOption(this)">
+            <div class="option-icon">🔬</div>
+            <div class="option-title">獨立醫檢所 / 參考實驗室</div>
+            <div class="option-desc">商業性檢驗所，強調 TAT 與效率，業務量大</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2: Volume -->
+      <div class="question-block" data-q="1">
+        <div class="question-step">問題 2 / 4</div>
+        <h4 class="question-text">每日染色體樣本分析量？</h4>
+        <p class="question-sub">包含羊水穿刺、絨毛取樣、骨髓血液等所有細胞遺傳樣本。</p>
+        <div class="options-grid">
+          <div class="option-card" data-q="1" data-v="low" onclick="selectOption(this)">
+            <div class="option-icon">📊</div>
+            <div class="option-title">少量</div>
+            <div class="option-desc">&lt; 20 個樣本 / 天</div>
+          </div>
+          <div class="option-card" data-q="1" data-v="medium" onclick="selectOption(this)">
+            <div class="option-icon">📈</div>
+            <div class="option-title">中量</div>
+            <div class="option-desc">20–50 個樣本 / 天</div>
+          </div>
+          <div class="option-card" data-q="1" data-v="high" onclick="selectOption(this)">
+            <div class="option-icon">🚀</div>
+            <div class="option-title">高量</div>
+            <div class="option-desc">&gt; 50 個樣本 / 天</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3: Primary Application -->
+      <div class="question-block" data-q="2">
+        <div class="question-step">問題 3 / 4</div>
+        <h4 class="question-text">主要業務類型？</h4>
+        <p class="question-sub">可選擇最主要的應用方向，以確認最合適的系統配置。</p>
+        <div class="options-grid">
+          <div class="option-card" data-q="2" data-v="prenatal" onclick="selectOption(this)">
+            <div class="option-icon">👶</div>
+            <div class="option-title">產前診斷</div>
+            <div class="option-desc">羊水穿刺、絨毛取樣核型分析，以 G-band 為主</div>
+          </div>
+          <div class="option-card" data-q="2" data-v="hematology" onclick="selectOption(this)">
+            <div class="option-icon">🩸</div>
+            <div class="option-title">血液腫瘤 / FISH</div>
+            <div class="option-desc">骨髓、白血病核型 + 大量 FISH 螢光訊號分析</div>
+          </div>
+          <div class="option-card" data-q="2" data-v="mixed" onclick="selectOption(this)">
+            <div class="option-icon">🔄</div>
+            <div class="option-title">混合應用</div>
+            <div class="option-desc">同時涵蓋產前診斷與血液腫瘤，需要最大靈活性</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4: Existing System -->
+      <div class="question-block" data-q="3">
+        <div class="question-step">問題 4 / 4</div>
+        <h4 class="question-text">貴實驗室目前的設備狀況？</h4>
+        <p class="question-sub">幫助我們判斷是採購新系統或進行軟體升級。</p>
+        <div class="options-grid cols-2">
+          <div class="option-card" data-q="3" data-v="existing_cv" onclick="selectOption(this)">
+            <div class="option-icon">✅</div>
+            <div class="option-title">已有 CytoVision 系統</div>
+            <div class="option-desc">正在使用 CytoVision，希望評估 AI 模組升級</div>
+          </div>
+          <div class="option-card" data-q="3" data-v="new" onclick="selectOption(this)">
+            <div class="option-icon">🆕</div>
+            <div class="option-title">全新採購</div>
+            <div class="option-desc">尚未有細胞遺傳學分析系統，或需要整套更新</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="config-footer" id="configFooter">
+      <button class="btn btn-secondary" id="btnBack" onclick="prevStep()" style="display:none;">← 上一步</button>
+      <button class="btn btn-primary" id="btnNext" onclick="nextStep()" disabled>下一步 →</button>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-panel" id="resultPanel">
+      <div class="result-header">
+        <div class="result-badge" id="resultBadge">🧬</div>
+        <div>
+          <h3 class="result-title" id="resultTitle">建議配置</h3>
+          <p class="result-subtitle" id="resultSubtitle">根據您的需求，以下是最適合的解決方案</p>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-box">
+          <div class="result-box-label">推薦配置</div>
+          <ul class="result-items" id="resultConfig"></ul>
+        </div>
+        <div class="result-box">
+          <div class="result-box-label">主要效益</div>
+          <ul class="result-items" id="resultBenefits"></ul>
+        </div>
+      </div>
+
+      <div class="result-pitch">
+        <div class="result-pitch-label">建議業務切入話術</div>
+        <p id="resultPitch"></p>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn btn-primary" onclick="resetConfig()">重新選擇</button>
+        <button class="btn btn-secondary" onclick="printResult()">列印結果</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare-section" id="compare">
+  <div class="section-label">競品比較</div>
+  <h2 class="section-title reveal">Leica CytoInsight vs. 主要競品</h2>
+  <p class="section-desc reveal">與全球主要細胞遺傳學 AI 解決方案的關鍵差異比較。</p>
+
+  <table class="compare-table reveal">
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th class="leica">👑 Leica CytoInsight <span class="leica-badge">推薦</span></th>
+        <th>Applied Spectral (ASI)</th>
+        <th>Metasystems Ikaros AI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>與硬體整合度</td>
+        <td class="leica"><span class="check">✓</span> 與 CytoVision 原生整合，單一介面全流程</td>
+        <td><span class="warn">△</span> 需搭配特定相機系統</td>
+        <td><span class="warn">△</span> 需搭配 Metasystems 平台</td>
+      </tr>
+      <tr>
+        <td>G-band AI 自動核型</td>
+        <td class="leica"><span class="check">✓</span> 深度學習 CNN，準確率高</td>
+        <td><span class="check">✓</span> 有 AI 功能</td>
+        <td><span class="check">✓</span> 有 AI 功能</td>
+      </tr>
+      <tr>
+        <td>FISH AI 多色訊號計數</td>
+        <td class="leica"><span class="check">✓</span> 多色螢光自動計數、異常標記</td>
+        <td><span class="check">✓</span> 支援</td>
+        <td><span class="check">✓</span> 支援</td>
+      </tr>
+      <tr>
+        <td>AI 品質智能篩選</td>
+        <td class="leica"><span class="check">✓</span> 自動品質評分、排序、閾值設定</td>
+        <td><span class="warn">△</span> 較基本</td>
+        <td><span class="warn">△</span> 較基本</td>
+      </tr>
+      <tr>
+        <td>現有設備軟體升級</td>
+        <td class="leica"><span class="check">✓</span> 以軟體授權導入，無需換硬體</td>
+        <td><span class="warn">△</span> 限定硬體</td>
+        <td><span class="warn">△</span> 限定硬體</td>
+      </tr>
+      <tr>
+        <td>擴充性 / 開放性</td>
+        <td class="leica"><span class="check">✓</span> 可隨 CytoVision 模組升級，持續擴充</td>
+        <td><span class="warn">△</span> 相對封閉</td>
+        <td><span class="warn">△</span> 相對封閉</td>
+      </tr>
+      <tr>
+        <td>全球市佔率</td>
+        <td class="leica"><span class="check">✓</span> CytoVision 全球市佔率第一</td>
+        <td><span class="check">✓</span> 中高</td>
+        <td><span class="check">✓</span> 中高</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SALES PERSONAS -->
+<section id="personas">
+  <div class="section-label">銷售策略</div>
+  <h2 class="section-title reveal">對不同決策者的切入話術</h2>
+  <p class="section-desc reveal">根據客戶角色選擇最有效的切入點，快速建立共鳴。</p>
+
+  <div class="personas-grid reveal">
+    <div class="persona-card">
+      <div class="persona-header">
+        <div class="persona-avatar">👨‍⚕️</div>
+        <div>
+          <div class="persona-name">科主任 / 主任</div>
+          <div class="persona-role">決策者 · 預算核准</div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <div class="persona-pain">核心痛點</div>
+        <div class="persona-concern">「人找不到、留不住——資深醫檢師培訓 3 年，一離職業務就停擺。」</div>
+        <div class="persona-script">建議話術</div>
+        <div class="persona-pitch">
+          「主任，現在細胞遺傳室最大的挑戰不是設備，而是人才。CytoInsight AI 可以把原本需要老手才能做的染色體配對自動化，新人直接擔任審查角色——這不只是效率問題，更是您科室人才培育策略的關鍵轉型。」
+        </div>
+      </div>
+    </div>
+
+    <div class="persona-card">
+      <div class="persona-header">
+        <div class="persona-avatar">🔬</div>
+        <div>
+          <div class="persona-name">組長 / 資深醫檢師</div>
+          <div class="persona-role">使用者 · 意見領袖</div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <div class="persona-pain">核心痛點</div>
+        <div class="persona-concern">「每天把 46 條染色體一條一條拖過去對齊，重複又耗神，這才是最累的工作。」</div>
+        <div class="persona-script">建議話術</div>
+        <div class="persona-pitch">
+          「我知道最累的不是判讀染色體有無異常，而是把 46 條一條一條拖過去排列。CytoInsight 就是把這個最枯燥的動作自動化——AI 先做好初稿，您只需要做最後的專業確認。就像有個助理先幫您整理好，您再做最終判斷。」
+        </div>
+      </div>
+    </div>
+
+    <div class="persona-card">
+      <div class="persona-header">
+        <div class="persona-avatar">💼</div>
+        <div>
+          <div class="persona-name">院長 / 管理層</div>
+          <div class="persona-role">ROI 導向 · 競爭力考量</div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <div class="persona-pain">核心痛點</div>
+        <div class="persona-concern">「投資要能看到回報——設備費用高，但科室效率能真的改善嗎？」</div>
+        <div class="persona-script">建議話術</div>
+        <div class="persona-pitch">
+          「每個核型從 20 分鐘縮短至 5 分鐘，效率提升 4 倍。以每日 20 個樣本計算，一天節省 5 小時人力工時。折算人力成本，2–3 年內即可回收設備投資，同時改善 TAT、提升市場競爭力。」
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Leica Biosystems · CytoInsight AI</div>
+  <div class="footer-note">
+    本頁面為業務內部快速入門參考資料<br>
+    詳細技術規格與報價請洽 Leica Biosystems 台灣業務團隊
+  </div>
+</footer>
+
+<script>
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // stagger children
+      const children = e.target.querySelectorAll('.reveal');
+      children.forEach((child, i) => {
+        setTimeout(() => child.classList.add('visible'), i * 100);
+      });
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── COUNTER ANIMATION ──
+function animateCounter(el, end, suffix = '') {
+  let start = 0;
+  const duration = 1500;
+  const step = end / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= end) {
+      start = end;
+      clearInterval(timer);
+    }
+    el.textContent = Math.round(start) + suffix;
+  }, 16);
+}
+
+// ── CONFIGURATOR ──
+const answers = {};
+let currentStep = 0;
+const totalSteps = 4;
+
+function selectOption(el) {
+  const q = parseInt(el.dataset.q);
+  const v = el.dataset.v;
+
+  // Clear siblings
+  document.querySelectorAll(`.option-card[data-q="${q}"]`).forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[q] = v;
+
+  // Enable next
+  document.getElementById('btnNext').disabled = false;
+}
+
+function updateProgress() {
+  for (let i = 0; i < totalSteps; i++) {
+    const dot = document.getElementById(`dot${i}`);
+    dot.className = 'progress-dot';
+    if (i < currentStep) dot.classList.add('done');
+    else if (i === currentStep) dot.classList.add('active');
+  }
+}
+
+function nextStep() {
+  if (currentStep < totalSteps - 1) {
+    document.querySelector(`.question-block[data-q="${currentStep}"]`).classList.remove('active');
+    currentStep++;
+    document.querySelector(`.question-block[data-q="${currentStep}"]`).classList.add('active');
+    updateProgress();
+    document.getElementById('btnBack').style.display = 'inline-block';
+    document.getElementById('btnNext').disabled = !answers[currentStep];
+
+    if (currentStep === totalSteps - 1) {
+      document.getElementById('btnNext').textContent = '查看結果 →';
+    }
+  } else {
+    showResult();
+  }
+}
+
+function prevStep() {
+  if (currentStep > 0) {
+    document.querySelector(`.question-block[data-q="${currentStep}"]`).classList.remove('active');
+    currentStep--;
+    document.querySelector(`.question-block[data-q="${currentStep}"]`).classList.add('active');
+    updateProgress();
+    document.getElementById('btnNext').textContent = '下一步 →';
+    document.getElementById('btnNext').disabled = false;
+    if (currentStep === 0) document.getElementById('btnBack').style.display = 'none';
+  }
+}
+
+function showResult() {
+  document.getElementById('configBody').style.display = 'none';
+  document.getElementById('configFooter').style.display = 'none';
+
+  const result = calcResult();
+
+  document.getElementById('resultBadge').textContent = result.icon;
+  document.getElementById('resultTitle').textContent = result.title;
+  document.getElementById('resultSubtitle').textContent = result.subtitle;
+
+  const configList = document.getElementById('resultConfig');
+  configList.innerHTML = result.config.map(c => `<li>${c}</li>`).join('');
+
+  const benefitsList = document.getElementById('resultBenefits');
+  benefitsList.innerHTML = result.benefits.map(b => `<li>${b}</li>`).join('');
+
+  document.getElementById('resultPitch').textContent = result.pitch;
+
+  document.getElementById('resultPanel').classList.add('show');
+}
+
+function calcResult() {
+  const lab = answers[0];
+  const vol = answers[1];
+  const app = answers[2];
+  const exist = answers[3];
+
+  // Decision logic
+  if (app === 'hematology' || (app === 'mixed' && vol === 'high')) {
+    return {
+      icon: '🩸',
+      title: 'CytoVision DM6 B + CytoInsight AI + VERSA',
+      subtitle: '血液腫瘤 / FISH 高通量配置',
+      config: [
+        'CytoVision DM6 B — 螢光顯微鏡系統',
+        'CytoInsight AI 模組（AI 核型 + AI FISH 計數）',
+        'Aperio VERSA — 多色螢光掃描儀（可選）',
+        exist === 'existing_cv' ? 'CytoInsight AI 軟體升級授權' : '全套新系統安裝部署'
+      ],
+      benefits: [
+        'AI FISH 多色訊號自動計數，降低視覺疲勞',
+        '複雜異常核型 AI 提供初稿，醫檢師專注判讀',
+        '批次統計報告自動產出',
+        'VERSA 支援 63x 油鏡螢光，研究 / 臨床兩用'
+      ],
+      pitch: '貴實驗室 FISH 分析量大，人眼長時間判讀螢光訊號是最大的效率瓶頸。CytoInsight AI FISH 計數模組可以在數秒內完成每個細胞的多色訊號計數，不只提升速度，更能降低因視覺疲勞導致的漏計風險——在血液腫瘤診斷中，每一個訊號都至關重要。'
+    };
+  }
+
+  if (app === 'prenatal' && vol === 'high') {
+    return {
+      icon: '🏥',
+      title: 'CytoVision GSL-120 + CytoInsight AI（高通量配置）',
+      subtitle: '產前診斷高業務量旗艦配置',
+      config: [
+        'CytoVision GSL-120 — 高通量 120 片自動掃描系統',
+        'CytoInsight AI 模組（AI 自動核型 + 智能品質篩選）',
+        exist === 'existing_cv' ? 'CytoInsight AI 軟體升級授權（確認版本相容性）' : '全套新系統安裝部署',
+        'LIMS / LIS 整合設定'
+      ],
+      benefits: [
+        'GSL-120 自動上樣，每日可處理大量標本',
+        'AI 自動核型讓正常案例幾乎免人工排列',
+        '智能品質篩選優先呈現最佳分裂相',
+        '顯著改善 TAT，提升競爭力'
+      ],
+      pitch: '以每日超過 20 個產前樣本的業務量來說，TAT 的壓力相當大。CytoInsight AI 配合 GSL-120 自動掃描，可以讓正常核型幾乎全自動完成，醫檢師只需要做最後審查——這不只是效率提升，更是在同樣人力下承接更多業務的關鍵能力。'
+    };
+  }
+
+  if (vol === 'low' || lab === 'regional') {
+    return {
+      icon: '🏨',
+      title: 'CytoVision GSL-120 + CytoInsight AI（標準配置）',
+      subtitle: '中型實驗室最佳性價比配置',
+      config: [
+        'CytoVision 系統（依現有或新採購確認型號）',
+        'CytoInsight AI 模組（AI 自動核型 + 智能品質篩選）',
+        exist === 'existing_cv' ? 'CytoInsight AI 軟體升級授權' : '完整系統採購',
+        '基礎 FISH 分析（視需求加選 AI FISH 模組）'
+      ],
+      benefits: [
+        '以軟體升級方式導入，降低初期投資門檻',
+        'AI 協助新人快速上手，縮短培訓週期',
+        '現有人力可服務更多樣本量',
+        '未來可依業務成長逐步擴充模組'
+      ],
+      pitch: '對於業務量穩定成長的實驗室，CytoInsight AI 最大的價值在於「人力槓桿」——同樣的人力，可以做更多的檢體，或者讓現有人員從繁瑣排列中解放出來，專注在更高價值的複雜案例判讀。而且如果您已有 CytoVision，可以直接軟體升級，投資相當有效率。'
+    };
+  }
+
+  // Default: large medical center
+  return {
+    icon: '🧬',
+    title: 'CytoVision GSL-120 + CytoInsight AI（完整版）',
+    subtitle: '醫學中心全功能配置',
+    config: [
+      'CytoVision GSL-120 — 高通量自動掃描系統',
+      'CytoInsight AI 完整模組（核型 + FISH + 品質篩選）',
+      exist === 'existing_cv' ? 'AI 軟體升級授權（建議確認當前版本）' : '全套系統部署 + 安裝培訓',
+      'LIMS / LIS 整合 + 完整服務合約'
+    ],
+    benefits: [
+      'AI 自動核型讓新人也能快速勝任，緩解人才壓力',
+      '每日節省數小時人力工時，TAT 大幅改善',
+      '複雜案例由 AI 提供初稿，資深醫檢師集中審查',
+      '完整服務合約確保系統長期穩定運行'
+    ],
+    pitch: '醫學中心面對的挑戰是：業務量大、人才難留、TAT 要求嚴格。CytoInsight AI 能同時解決這三個問題——AI 降低對資深醫檢師的依賴、提升 4 倍效率改善 TAT，也讓科室在相同人力下具備更強的承接能力。這不只是設備投資，更是科室競爭力的全面升級。'
+  };
+}
+
+function resetConfig() {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  currentStep = 0;
+  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.question-block').forEach(b => b.classList.remove('active'));
+  document.querySelector('.question-block[data-q="0"]').classList.add('active');
+  document.getElementById('configBody').style.display = 'block';
+  document.getElementById('configFooter').style.display = 'flex';
+  document.getElementById('resultPanel').classList.remove('show');
+  document.getElementById('btnBack').style.display = 'none';
+  document.getElementById('btnNext').disabled = true;
+  document.getElementById('btnNext').textContent = '下一步 →';
+  updateProgress();
+}
+
+function printResult() {
+  window.print();
+}
+</script>
+</body>
+</html>
