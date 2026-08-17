@@ -1,70 +1,32 @@
-# GSL 訂貨產品資訊
-
-> 以下為 GSL 系列的訂貨參考資訊。實際料號請以最新版 Leica Biosystems 報價系統為準。
-
+---
+title: "CytoInsight GSL 配置與訂貨確認"
+description: "CytoInsight GSL 官方配置與下單前確認項目。"
+review_status: pending-review
+last_verified: null
+regions: [global, TW, US, EU]
+regulatory_use: RUO
+source_urls:
+  - "https://www.leicabiosystems.com/sites/default/files/media_product-download/2026-03/Brochure_-_CytoInsight_GSL-260089_Rev-A.pdf"
 ---
 
-## 主機系統
+# CytoInsight GSL 配置與訂貨確認
 
-| 型號 | 說明 | 備註 |
-| :--- | :--- | :--- |
-| **GSL10** | 10 片裝臨床 FISH 掃描系統 | 含基本配置物鏡、螢光模組 |
-| **GSL120** | 120 片裝高通量臨床 FISH 掃描系統 | 含全自動進樣器、基本配置物鏡、螢光模組 |
+> [!WARNING] 不可直接下單
+> 公開型錄只確認配置名稱與主要組成，未提供完整區域商務料號。所有 SKU、電壓、物鏡、濾鏡、相機、電腦、軟體模組及服務內容必須以 Leica 區域正式報價為準。
 
----
+## 官方配置名稱
 
-## 物鏡選配
+- Review Station
+- Capture Station without Microscope
+- Capture Station with Microscope
+- Scanning Station with GSL 10 Automated Slide Loader
+- Scanning Station with GSL 120 Automated Slide Loader
 
-| 物鏡 | 適用場景 | 備註 |
-| :--- | :--- | :--- |
-| 20x 乾鏡 | 組織架構概覽掃描 | 標準配置 |
-| 40x 油鏡 | 標準 FISH 訊號掃描 | 建議必選 |
-| **63x 油鏡** | 高解析度 FISH / 血液抹片 | 重要選配，含 Auto-oiler |
+## 報價前必核對
 
----
-
-## 螢光濾鏡配置
-
-依客戶實驗室使用的 FISH 探針確認所需濾鏡：
-
-| 濾鏡通道 | 對應染劑/探針 | 常用場景 |
-| :--- | :--- | :--- |
-| DAPI | 核染色（定位用） | 所有 FISH 必備 |
-| FITC / Green | 綠色探針（如 BCR 綠） | BCR-ABL、HER2 等 |
-| TRITC / Red | 紅色探針（如 ABL 紅） | BCR-ABL、ALK 等 |
-| Cy5 / Far Red | 遠紅探針 | 多色 FISH 組合 |
-| Cy3 | 橘紅色探針 | 依探針廠商選擇 |
-
-> **訂貨提醒**：初次建置時建議與客戶確認目前使用的 FISH 探針品牌（如 Abbott/Vysis、Cytocell、ZytoVision），依此確認對應的濾鏡組合。
-
----
-
-## 軟體授權
-
-| 軟體 | 功能 | 備註 |
-| :--- | :--- | :--- |
-| CytoVision 基本授權 | 影像管理與判讀工作站 | 與 GSL 搭配使用 |
-| FISH 訊號計數模組 | 半自動 FISH 訊號辨識與計數 | 選配 |
-| 遠端閱覽授權 | 遠端/多工作站影像存取 | 選配，適合多科會診 |
-
----
-
-## 安裝需求（供醫院空間規劃參考）
-
-| 項目 | GSL10 | GSL120 |
-| :--- | :--- | :--- |
-| 設備尺寸 | 請洽原廠確認 | 請洽原廠確認 |
-| 電源需求 | 標準 110V/220V | 標準 110V/220V |
-| 工作台需求 | 防震工作台建議 | 防震工作台建議 |
-| 網路需求 | 需連接至 CytoVision 工作站 | 需連接至 CytoVision 工作站 |
-
----
-
-## 訂貨流程備忘
-
-- [ ] 確認客戶需求機型：GSL10 或 GSL120
-- [ ] 確認物鏡配置（是否需要 63x 油鏡）
-- [ ] 確認客戶使用的 FISH 探針品牌，對應所需螢光濾鏡
-- [ ] 確認是否已有 CytoVision 工作站，或需一併報價
-- [ ] 確認安裝空間與電源條件
-- [ ] 確認保固期與服務合約需求
+1. RUO 標示與銷售地區。
+2. DM6 B、12 MP CMOS 相機、XY stage 與 loader 是否包含。
+3. 自動點油、條碼讀取及選配 AI Karyotyping 模組。
+4. 物鏡倍率、螢光燈源、filter set 與 assay 數量。
+5. CytoInsight 軟體版本、授權席次、資料庫與備份需求。
+6. 安裝、訓練、保固與區域服務料號。

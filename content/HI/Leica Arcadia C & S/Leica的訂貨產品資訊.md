@@ -1,4 +1,17 @@
+---
+title: "Arcadia C & S 訂貨與產品規格資訊"
+description: "Leica Biosystems 產品與應用資料；內容仍待正式來源逐項驗證。"
+review_status: pending-review
+last_verified: null
+regions: [global, TW, US, EU]
+regulatory_use: mixed
+source_urls: []
+---
+
 # Arcadia C & S 訂貨與產品規格資訊
+
+> [!WARNING] 尚待正式來源逐項驗證
+> 本頁資料僅供參考；在完成產品、地區與法規核對前，不可直接用於報價、招標文件或臨床決策。
 
 > ⚠️ **注意**：以下料號資訊僅供參考大方向。實際報價請以 Leica Biosystems 官方 Pricing Tool 為準。
 
@@ -7,15 +20,18 @@
 ## 📦 主要訂貨項目
 
 ### 1. Arcadia H (加熱包埋模組)
-*   核心主機，含：3 個獨立控溫蠟槽、加熱工作面板、鑷子加熱器、LED 照明。
-*   選配：第 4 蠟槽模組。
+
+- 核心主機，含：3 個獨立控溫蠟槽、加熱工作面板、鑷子加熱器、LED 照明。
+- 選配：第 4 蠟槽模組。
 
 ### 2. Arcadia C (冷卻模組)
-*   冷卻板（Peltier 冷卻，-5°C）。
-*   內建小型冷凍儲存區。
+
+- 冷卻板（Peltier 冷卻，-5°C）。
+- 內建小型冷凍儲存區。
 
 ### 3. Arcadia S (冷凍儲存模組)
-*   選購項目。適合高通量實驗室需要暫存大量蠟塊的場景。
+
+- 選購項目。適合高通量實驗室需要暫存大量蠟塊的場景。
 
 ---
 

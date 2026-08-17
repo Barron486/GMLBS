@@ -1,23 +1,36 @@
+---
+title: "Leica ST4020 Linear Stainer 訂貨產品資訊"
+description: "Leica Biosystems 產品與應用資料；內容仍待正式來源逐項驗證。"
+review_status: pending-review
+last_verified: null
+regions: [global, TW, US, EU]
+regulatory_use: mixed
+source_urls: []
+---
+
 # Leica ST4020 Linear Stainer 訂貨產品資訊
+
+> [!WARNING] 尚待正式來源逐項驗證
+> 本頁資料僅供參考；在完成產品、地區與法規核對前，不可直接用於報價、招標文件或臨床決策。
 
 以下資訊僅供參考，實際訂購料號與配置請務必諮詢 Leica Biosystems 當地業務代表或官方 eIFU 確認。
 
 ## 主機 (Main Instrument)
 
-*   **產品名稱**: Leica ST4020 Linear Stainer
-*   **目錄編號 (Catalog Number)**: **14 0402 36000** (實際料號請依官方資訊為主)
-    *   此料號通常包含主機本體。
+- **產品名稱**: Leica ST4020 Linear Stainer
+- **目錄編號 (Catalog Number)**: **14 0402 36000** (實際料號請依官方資訊為主)
+  - 此料號通常包含主機本體。
 
 ## 常用耗材與配件 (Consumables & Accessories)
 
-*   **試劑容器 (Reagent Container)**
-    *   標準試劑槽 (約 50 ml 容量)。
-    *   小容量設計有助於降低試劑成本及減少廢液產生。
-*   **玻片架 (Slide Rack)**
-    *   **4-slide rack** (Leica 專用 4 片裝連續玻片架)。
-    *   專為急凍切片或少批量、多批次的流程設計。
-*   **清洗槽 (Wash Station)**
-    *   可搭配水洗槽流路體系。
+- **試劑容器 (Reagent Container)**
+  - 標準試劑槽 (約 50 ml 容量)。
+  - 小容量設計有助於降低試劑成本及減少廢液產生。
+- **玻片架 (Slide Rack)**
+  - **4-slide rack** (Leica 專用 4 片裝連續玻片架)。
+  - 專為急凍切片或少批量、多批次的流程設計。
+- **清洗槽 (Wash Station)**
+  - 可搭配水洗槽流路體系。
 
 ## 訂購注意事項
 
