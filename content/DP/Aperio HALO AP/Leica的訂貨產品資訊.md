@@ -1,39 +1,25 @@
-# Aperio HALO AP 訂貨與部署規格資訊
-
-> ⚠️ **注意**：HALO AP 為軟體平台產品，實際報價取決於使用者授權數量、部署方式（地端/雲端）、AI Store 授權範圍等。請以 Leica Biosystems 官方報價系統為準。
-
+---
+title: "Aperio HALO AP／HALO AP DX 訂貨確認"
+description: "HALO AP 產品版本與正式報價前確認項目。"
+review_status: pending-review
+last_verified: null
+regions: [global, TW, US, EU]
+regulatory_use: mixed
+source_urls:
+  - "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K252762.pdf"
+  - "https://www.leicabiosystems.com/us/digital-pathology/manage/aperio-halo-ap-dx/"
 ---
 
-## 📦 主要授權項目
+# Aperio HALO AP／HALO AP DX 訂貨確認
 
-### 1. 核心平台授權 (HALO AP Core)
-*   **內容**：案例管理系統、影像瀏覽器、使用者管理、LIS 整合介面、DICOM 匯出模組。
-*   **計價方式**：通常以「掃描儀綁定」或「年度訂閱」方式計價。
+> [!WARNING] 不可直接下單
+> 公開 FDA 文件不等同 Leica 區域商務料號表。正式報價前須確認產品名、版本、地區法規、授權模式、使用者數、伺服器規格、掃描器、格式、顯示器、安裝與服務。
 
-### 2. 使用者授權 (User Licenses)
-*   **Pathologist License（病理醫師授權）**：可進行閱片、標註、AI 分析、簽發報告。
-*   **Technician License（技術員授權）**：可進行案例建立、影像上傳、QC 檢查，但不具簽發報告權限。
-*   **檢視授權 (Viewer License)**：唯讀，適合臨床會議、教學展示。
+## 必填報價欄位
 
-### 3. Aperio AI Store 模組授權
-*   各 AI 演算法獨立授權（如 PD-L1、HER2、Ki-67 等）。
-*   可依醫院實際檢驗項目選購，不需要全部購買。
-
-### 4. 部署架構選項
-| 部署方式 | 說明 | 適合對象 |
-|:---|:---|:---|
-| **地端部署 (On-Premise)** | 安裝在醫院自有伺服器上，資料不離院 | 資安政策嚴格的醫學中心 |
-| **私有雲 (Private Cloud)** | 部署在醫院指定的雲端租戶中 | 有雲端政策的醫院體系 |
-| **混合架構 (Hybrid)** | 影像存地端、AI 運算走雲端 | 需要強大 GPU 算力但不想自建 |
-
----
-
-## 📝 報價前必問清單
-
-1.  **[] 預計有幾位病理醫師需要同時使用？** → 決定 Pathologist License 數量
-2.  **[] 醫院目前使用哪套 LIS 系統？** → 確認 HL7 整合客製化需求
-3.  **[] 是否已有 Aperio 掃描儀？哪一型號？** → 確認原生串流相容性
-4.  **[] 是否有 PACS/VNA，需要 DICOM 歸檔？** → 決定是否需要 DICOM WSI 模組
-5.  **[] 對 AI 分析有哪些具體需求？** (PD-L1? HER2? Ki-67?) → 選購對應 AI Store 模組
-6.  **[] 偏好地端還是雲端部署？** → 影響硬體規格與報價結構
-7.  **[] 是否有多院區需求？** → 可能需要多站台授權或集中式部署
+1. `HALO AP` 或 `HALO AP Dx v2.4`，不得省略 Dx／版本。
+2. 使用地區與預定用途（研究或診斷）。
+3. 掃描器型號、輸出格式及顯示器。
+4. 伺服器、資料庫、瀏覽器與 concurrent users。
+5. 儲存、備份、LIS 整合、資安與驗證服務。
+6. 授權期間、維護、升級及區域支援。
